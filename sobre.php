@@ -1,52 +1,14 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>Sobre a Mirror Fashion</title>
-    <link rel="stylesheet" href="css/sobre.css">
-    <link rel="stylesheet" href="css/estilos.css">
-</head>
-
-<body>
-    <header class="container">
-
-        <h1>
-            <img src="img/logo.png" alt="Mirror Fashion">
-        </h1>
-
-        <p class="sacola">
-            Nenhum item na sacola de compras
-        </p>
-
-        <nav class="menu-opcoes">
-            <ul>
-                <li>
-                    <a href="#">Sua Conta</a>
-                </li>
-                <li>
-                    <a href="#">Lista de Desejos</a>
-                </li>
-                <li>
-                    <a href="#">Cartão Fidelidade</a>
-                </li>
-                <li>
-                    <a href="sobre.html">Sobre</a>
-                </li>
-                <li>
-                    <a href="#">Ajuda</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
+<?php
+     $cabecalho_title = "Home da Mirror Fashion";
+     include("cabecalho.php");
+ ?>
     <section class="container">
 
         <h1>A Mirror Fashion</h1>
 
         <p>
             A
-            <strong>Mirror Fashion</strong> é a maior empresa comércio eletrônico no segmento de moda em todo o mundo. Fundada em 1932,
+            <strong>Mirror Fashion</strong> é a maior empresa comércio eletrônico no segmento de moda em todo o mundo. Fundada há <?php print date("Y") - 1932 ?> anos,
             possui filiais em 124 países, sendo líder de mercado com mais de 90% de participação em 118 deles.
         </p>
     
@@ -129,18 +91,4 @@
         </ul>
     
     </section>
-
-        <footer>
-            <div class="container">
-                <img src="img/logo-rodape.png" alt="Logo Mirror Fashion">
-
-                <ul class="social">
-                    <li><a href="http://facebook.com/cassi.nodari">Facebook</a></li>
-                    <li><a href="http://twitter.com/cassianenodari">Twitter</a></li>
-                    <li><a href="http://plus.google.com/cassianenodari">Google+</a></li>
-                </ul>
-            </div>
-        </footer>
-</body>
-
-</html>
+<?php include("rodape.php"); ?>
