@@ -38,19 +38,37 @@
 
 							</fieldset>
 							
-							<!-- <div class="tamanho">
-								<legend>Escolha o tamanho:</legend>
-								<input type="radio" name="tamanho" value="size">36<br>
-								<input type="radio" name="tamanho" value="size">38<br>
-								<input type="radio" name="tamanho" value="size">40<br>
-								<input type="radio" name="tamanho" value="size">42<br>
-								<input type="radio" name="tamanho" value="size">44<br>
-							</div> -->
+							<div class="tamanho">
+								
+							<legend>Escolha o tamanho:</legend>
+								<label class="radio-inline">
+									<input type="radio" name="optradio">32
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="optradio">36
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="optradio">38
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="optradio">40
+								</label>
+								<br>
+								<label class="radio-inline">
+									<input type="radio" name="optradio">42
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="optradio">44
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="optradio">46
+								</label>
+							</div>
 
-							<fieldset class="tamanhos">
+							<!-- <fieldset class="tamanhos">
 								<legend>Escolha o tamanho:</legend>
 								<input type="range" min="36" max="46" value="42" step="2" name="tamanho" id="tamanho">
-							</fieldset>
+							</fieldset> -->
 
 							<input type="submit" class="comprar" value="Comprar">
 					</form>
