@@ -1,6 +1,10 @@
 <?php
 		$cabecalho_title = "Produto da Mirror Fashion";
 		include("cabecalho.php");
+
+		// conecta com o banco
+		// buscar produtos
+		
 ?>
 <?php $cabecalho_css = '<link rel="stylesheet" href="css/produto.css">'; ?>
 
