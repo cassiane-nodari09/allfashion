@@ -2,6 +2,7 @@
      $cabecalho_title = "Home da Mirror Fashion";
      include("cabecalho.php");
  ?>
+    
     <section class="container">
 
         <h1>A Mirror Fashion</h1>

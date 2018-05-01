@@ -5,6 +5,7 @@
 		<title>Checkout All Fashion</title>
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" href="css/bootstrap.css">
+		<script src="js/total.js"></script>
 		<!-- <link rel="stylesheet" href="css/bootstrap-flatly.css"> -->
 	</head>
 	<body>
@@ -47,18 +48,26 @@
 							<div class="panel-body">
 								<img src="img/produtos/foto1-<?= $_POST['cor'] ?>.png" class="img-thumbnail img-responsive">
 								<dl>
-									<dt>Cor</dt>
-									<dd><?= $_POST['cor'] ?></dd>
-
-									<dt>Tamanho</dt>
-									<dd><?= $_POST['tamanho'] ?></dd>
-									
 									<dt>Produto</dt>
-									<dd><?= $_POST['nome'] ?></dd>
-
+									<dd><?= $_POST["nome"] ?></dd>
 									<dt>Preço</dt>
-									<dd>R$ <?= $_POST['preco'] ?></dd>
-								</dl>
+									<dd id="preco">R$ <?= $_POST["preco"] ?></dd>
+									<dt>Cor</dt>
+									<dd><?= $_POST["cor"] ?></dd>
+									<!-- <dt>Tamanho</dt> -->
+									<!-- <dd><?= $_POST["tamanho"] ?></dd> -->
+								</dl>	
+								
+								<div class="form-group">
+									<label for="qt">Quantidade</label>
+									<input id="qt" class="form-control" type="number" min="0" max="99" value="1">
+								</div>
+								<div class="form-group">
+									<label for="total">Total</label>
+									<output for="qt preco" id="total" class="form-control">
+										<?= $_POST["preco"] ?>
+									</output>
+								</div>
 							</div>
 						</div>
 					</div>

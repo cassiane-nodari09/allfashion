@@ -130,6 +130,13 @@ header {
 	width: auto;
 }
 
+.painel-compacto li:nth-child(n+7) {
+	display: none;
+}
+.painel-compacto button {
+	display: block;
+}
+
 .novidades {
 	float: left;
 	background-color: #f5dcdc;
@@ -226,13 +233,14 @@ footer .container {
 }
 
 .menu-departamentos ul ul li {
+	
 }
 
 .menu-departamentos li li a:before {
-	
 	padding-right: 3px;
 	margin-right: 5px;
 }
+
 .painel h2:before {
 	content: '\2756';
 	padding-right: 5px;
@@ -262,7 +270,10 @@ footer .container {
 	transition: 0.7s ease-out;
 }
 
-/* */
+.painel button {
+	display: none;
+}
+
 .busca {
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
@@ -281,10 +292,8 @@ header h1 img {
 }
 
 .busca, .menu-departamentos, .destaque img {
-  margin-right: 0;
-  width: 100%;
+  margin-left: 0;
 }
-
 
 @media only screen and (max-width: 780px) {
 
@@ -305,5 +314,4 @@ header h1 img {
 	.painel img {
 		width: 100%
 	}
-
 }

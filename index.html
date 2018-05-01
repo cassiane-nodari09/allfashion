@@ -7,13 +7,16 @@
   <link rel="stylesheet" href="css/estilos.css">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="css/mobile.css" media="(max-width: 939px)">
+  <script src="js/jquery.js"></script>
+  <script src="js/home.js"></script>
+  
 </head>
 
 <body>
   <header class="container">
 
     <h1>
-      <img src="img/logo.png" alt="Mirror Fashion">
+      <!-- <img src="img/logo.png" alt="Mirror Fashion"> -->
     </h1>
 
     <p class="sacola">
@@ -93,8 +96,9 @@
   <!-- fim .container .destaque -->
 
   <div class="container paineis">
+    
     <!-- os paineis de novidades e mais vendidos entrarão aqui dentro -->
-    <section class="painel novidades">
+    <section class="painel novidades painel-compacto">
       <h2>Novidades</h2>
       <ol>
         <li>
@@ -154,8 +158,9 @@
           </a>
         </li>
       </ol>
+      <button type="button">Mostra mais</button>
     </section>
-    <section class="painel mais-vendidos">
+    <section class="painel mais-vendidos painel-compacto">
       <h2>Mais Vendidos</h2>
       <ol>
         <li>
@@ -224,6 +229,7 @@
         </li>
 
       </ol>
+      <button type="button">Mostra mais</button>
     </section>
   </div>
 

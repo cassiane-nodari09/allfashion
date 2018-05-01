@@ -44,29 +44,29 @@
 							
 							<div class="tamanho">
 								
-							<legend>Escolha o tamanho:</legend>
-								<label class="radio-inline">
-									<input type="radio" name="optradio">32
-								</label>
-								<label class="radio-inline">
-									<input type="radio" name="optradio">36
-								</label>
-								<label class="radio-inline">
-									<input type="radio" name="optradio">38
-								</label>
-								<label class="radio-inline">
-									<input type="radio" name="optradio">40
-								</label>
-								<br>
-								<label class="radio-inline">
-									<input type="radio" name="optradio">42
-								</label>
-								<label class="radio-inline">
-									<input type="radio" name="optradio">44
-								</label>
-								<label class="radio-inline">
-									<input type="radio" name="optradio">46
-								</label>
+								<legend>Escolha o tamanho:</legend>
+									<label class="radio-inline">
+										<input type="radio" name="optradio">32
+									</label>
+									<label class="radio-inline">
+										<input type="radio" name="optradio">36
+									</label>
+									<label class="radio-inline">
+										<input type="radio" name="optradio">38
+									</label>
+									<label class="radio-inline">
+										<input type="radio" name="optradio">40
+									</label>
+									<br>
+									<label class="radio-inline">
+										<input type="radio" name="optradio">42
+									</label>
+									<label class="radio-inline">
+										<input type="radio" name="optradio">44
+									</label>
+									<label class="radio-inline">
+										<input type="radio" name="optradio">46
+									</label>
 							</div>
 
 							<!-- <fieldset class="tamanhos">
