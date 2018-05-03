@@ -9,7 +9,10 @@
   <link rel="stylesheet" href="css/mobile.css" media="(max-width: 939px)">
   <script src="js/jquery.js"></script>
   <script src="js/home.js"></script>
-  
+  <?php
+    include_once 'config/conexao.php';
+    $db = new Conexao();
+  ?>
 </head>
 
 <body>
@@ -57,35 +60,24 @@
 
     <section class="menu-departamentos">
       <h2>Departamentos</h2>
+      <?php
+        $categorias = $db->executa("SELECT * FROM CATEGORIAS");
+      ?>
       <nav>
         <ul>
-          <li>
-            <a href="#">Blusas e Camisas</a>
-            <ul class="sub-menu">
-              <li><a href="#">Manga curta</a></li>
-              <li><a href="#">Manga comprida</a></li>
-              <li><a href="#">Camisa social</a></li>
-              <li><a href="#">Camisa casual</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Calças</a>
-          </li>
-          <li>
-            <a href="#">Saias</a>
-          </li>
-          <li>
-            <a href="#">Vestidos</a>
-          </li>
-          <li>
-            <a href="#">Sapatos</a>
-          </li>
-          <li>
-            <a href="#">Bolsas e Carteiras</a>
-          </li>
-          <li>
-            <a href="#">Acessórios</a>
-          </li>
+          <?php while ($row = $categorias->fetch_array(MYSQLI_ASSOC)) { ?>
+            <li>
+              <a href="#"><?php echo utf8_encode($row['descricao']); ?></a>
+              <?php
+                $subcategorias = $db->executa("SELECT * FROM SUBCATEGORIAS WHERE CATEGORIAS_ID = ".$row['id']);
+              ?>
+              <ul class="sub-menu">
+                <?php while ($r = $subcategorias->fetch_array(MYSQLI_ASSOC)) { ?>
+                  <li><a href="#"><?php echo utf8_encode($r['descricao']); ?></a></li>
+                <?php } ?>
+              </ul>
+            </li>
+          <?php } ?>
         </ul>
       </nav>
     </section>
