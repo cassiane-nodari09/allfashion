@@ -1,6 +1,6 @@
 <footer>
     <div class="container">
-        <img src="img/logo-rodape.png" alt="Logo Mirror Fashion">
+        <img src="img/logo-rodape.png" alt="Logo All Fashion">
 
         <ul class="social">
         <li><a href="http://facebook.com/cassi.nodari">Facebook</a></li>

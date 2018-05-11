@@ -1,15 +1,15 @@
 <?php
-     $cabecalho_title = "Home da Mirror Fashion";
+     $cabecalho_title = "Home da All Fashion";
      include("cabecalho.php");
  ?>
     
     <section class="container">
 
-        <h1>A Mirror Fashion</h1>
+        <h1>A All Fashion</h1>
 
         <p>
             A
-            <strong>Mirror Fashion</strong> é a maior empresa comércio eletrônico no segmento de moda em todo o mundo. Fundada há <?php print date("Y") - 1932 ?> anos,
+            <strong>All Fashion</strong> é a maior empresa comércio eletrônico no segmento de moda em todo o mundo. Fundada há <?php print date("Y") - 1932 ?> anos,
             possui filiais em 124 países, sendo líder de mercado com mais de 90% de participação em 118 deles.
         </p>
     
@@ -20,11 +20,11 @@
     
         <figure id="centro-distribuicao">
             <img src="img/centro-distribuicao.png">
-            <figcaption>Centro de distribuição da Mirror Fashion</figcaption>
+            <figcaption>Centro de distribuição da All Fashion</figcaption>
         </figure>
     
         <p>
-            Compre suas roupas e acessórios na Mirror Fashion. Acesse
+            Compre suas roupas e acessórios na All Fashion. Acesse
             <a href="index.html">nossa loja</a> ou entre em contato se tiver dúvidas. Conheça também nossa
             <a href="#historia">história</a> e nossos
             <a href="#diferenciais">diferenciais</a>.
@@ -61,7 +61,7 @@
     
         <p>
             Dada a importância econômica da empresa para o Brasil, a família Pelho já recebeu diversos prêmios, homenagens e condecorações.
-            Todos os presidentes do Brasil já visitaram as instalações da Mirror Fashion, além de presidentes da União Européia,
+            Todos os presidentes do Brasil já visitaram as instalações da All Fashion, além de presidentes da União Européia,
             Ásia e o secretário-geral da ONU.
         </p>
     

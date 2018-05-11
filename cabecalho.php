@@ -17,7 +17,7 @@
 
       <header class="container">
         <h1>
-        <!-- <img src="img/logo.png" alt="Mirror Fashion"> -->
+        <!-- <img src="img/logo.png" alt="All Fashion"> -->
         </h1>
         <p class="sacola">
           Nenhum item na sacola de compras

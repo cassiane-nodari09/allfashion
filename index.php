@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Mirror Fashion</title>
+  <title>All fashion</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/estilos.css">
   <meta name="viewport" content="width=device-width">
@@ -19,7 +19,7 @@
   <header class="container">
 
     <h1>
-      <!-- <img src="img/logo.png" alt="Mirror Fashion"> -->
+      <!-- <img src="img/logo.png" alt="all fashion"> -->
     </h1>
 
     <p class="sacola">

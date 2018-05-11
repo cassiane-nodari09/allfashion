@@ -1,5 +1,5 @@
 <?php
-		$cabecalho_title = "Produto da Mirror Fashion";
+		$cabecalho_title = "Produto da All Fashion";
 		include("cabecalho.php");
 
 		// conecta com o banco
