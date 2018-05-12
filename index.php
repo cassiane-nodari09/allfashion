@@ -19,7 +19,7 @@
   <header class="container">
 
     <h1>
-      <!-- <img src="img/logo.png" alt="all fashion"> -->
+      <img src="img/logo12.png" alt="all fashion">
     </h1>
 
     <p class="sacola">
@@ -67,13 +67,14 @@
         <ul>
           <?php while ($row = $categorias->fetch_array(MYSQLI_ASSOC)) { ?>
             <li>
-              <a href="produto.php?id=123"><?php echo utf8_encode($row['descricao']); ?></a>
+            <?php $id = 10; ?>
+              <a href="produto.php"><?php echo utf8_encode($row['descricao']); ?></a>
               <?php
                 $subcategorias = $db->executa("SELECT * FROM SUBCATEGORIAS WHERE CATEGORIAS_ID = ".$row['id']);
               ?>
               <ul class="sub-menu">
                 <?php while ($r = $subcategorias->fetch_array(MYSQLI_ASSOC)) { ?>
-                  <li><a href="/produto.php"><?php echo utf8_encode($r['descricao']); ?></a></li>
+                  <li><a href="/produto.php?id=123"><?php echo utf8_encode($r['descricao']); ?></a></li>
                 <?php } ?>
               </ul>
             </li>
@@ -83,7 +84,7 @@
     </section>
     <!-- fim .menu-departamentos -->
 
-    <img src="img/destaque-home.png" alt="Promoção: Big City Night">
+    <img src="img/destaque-home.png" alt="Promoção: ">
   </div>
   <!-- fim .container .destaque -->
 

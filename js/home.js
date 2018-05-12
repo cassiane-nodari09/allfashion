@@ -1,9 +1,9 @@
 
-var banners = ["img/destaque-home.png", "img/destaque-home-2.png", "img/destaque-home-3.png", "img/destaque-home-4.png"];
+var banners = ["img/destaque-home-1.png", "img/destaque-home-2.png", "img/destaque-home-3.png", "img/destaque-home-4.png", "img/destaque-home-5.png"];
 var bannerAtual = 0;
 
 function trocaBanner() {
-    bannerAtual = (bannerAtual + 1) % 4;
+    bannerAtual = (bannerAtual + 1) % 5;
     document.querySelector('.destaque img').src = banners[bannerAtual];
 }
 
