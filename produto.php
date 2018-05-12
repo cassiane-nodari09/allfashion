@@ -1,11 +1,7 @@
-<?php
-		$cabecalho_title = "Produto da All Fashion";
-		include("cabecalho.php");
+<?php include("cabecalho.php");?>
+<?php include("header.php");?>
 
-		// conecta com o banco
-		// buscar produtos
-		
-?>
+
 <?php $cabecalho_css = '<link rel="stylesheet" href="css/produto.css">'; ?>
 
 	<link rel="stylesheet" href="css/mobile.css" media="(max-width: 939px)">
@@ -14,10 +10,21 @@
 	<div classe="produto-back">
 		<div class="container">
 			<div class="produto">
-				<?php $id = $_GET["id"];?>
-				<!-- <h1>Fuzzy Cardigan</h1>
-				<p>por apenas R$ 129,00</p> -->
+				<?php
+					$id = $_GET['id']; 
+					$produto = $db->executa("SELECT * FROM PRODUTOS WHERE ID = ".$id);
+					$produto = $produto->fetch_array();
+					// print_r($produto);
+				?>
 
+				<!-- <a href="produto.php"><?php //echo utf8_encode($produtos['id']); ?></a> -->
+				<h1><?php echo $produto['nome']?></h1>
+				<p>Por apenas R$<?php echo number_format($produto["preco"], 2, ",", ".")?></p>
+
+				<!-- CRIAR UM NOVO SELECT PARA CADA COR, COLOCAR NUM LAÇO WHILE -->
+				<!-- CRIAR UM NOVO SELECT PARA CADA TAMANHO, COLOCAR NUM LAÇO WHILE -->
+				
+				
 					<form action="checkout.php" method="POST">
 							<fieldset class="cores">
 								<legend>Escolha a cor:</legend>

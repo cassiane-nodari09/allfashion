@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 03-Maio-2018 às 05:02
+-- Generation Time: 12-Maio-2018 às 02:58
 -- Versão do servidor: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -42,7 +42,9 @@ INSERT INTO `categorias` (`id`, `descricao`, `ativo`) VALUES
 (1, 'Blusas e Camisas', 'S'),
 (2, 'Calças', 'S'),
 (3, 'Saias', 'S'),
-(4, 'Vestidos', 'S');
+(4, 'Vestidos', 'S'),
+(5, 'Bolsas', 'S'),
+(6, 'Acessórios', 'S');
 
 -- --------------------------------------------------------
 
@@ -67,6 +69,16 @@ CREATE TABLE `cores` (
   `descricao` varchar(45) DEFAULT NULL,
   `ativo` char(1) DEFAULT 'S'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `cores`
+--
+
+INSERT INTO `cores` (`id`, `descricao`, `ativo`) VALUES
+(1, 'Preto', 'S'),
+(2, 'Rosa', 'S'),
+(3, 'Verde', 'S'),
+(4, 'Azul', 'S');
 
 -- --------------------------------------------------------
 
@@ -149,6 +161,14 @@ CREATE TABLE `marcas` (
   `ativo` char(1) DEFAULT 'S'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `marcas`
+--
+
+INSERT INTO `marcas` (`id`, `descricao`, `ativo`) VALUES
+(1, 'Armani', 'S'),
+(2, 'Balmain', 'S');
+
 -- --------------------------------------------------------
 
 --
@@ -182,6 +202,15 @@ CREATE TABLE `produtos` (
   `Cores_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`) VALUES
+(1, 'Fuzz Cardigan', 'Blazer tradicional Hawaiano', 'M', '129.00', 1, 1, 2),
+(2, 'Vestido', 'Vestido social', 'U', '159.00', 2, 4, 1),
+(3, 'Vestido', 'Vestido social', 'U', '159.98', 2, 4, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -213,7 +242,12 @@ CREATE TABLE `subcategorias` (
 
 INSERT INTO `subcategorias` (`id`, `descricao`, `ativo`, `Categorias_id`) VALUES
 (1, 'Manga Curta', 'S', 1),
-(2, 'Manga Longa', 'S', 1);
+(2, 'Manga Longa', 'S', 1),
+(5, 'Flare', 'S', 2),
+(6, 'Legging ', 'S', 2),
+(7, 'Anel', 'S', 6),
+(8, 'Colar', 'S', 6),
+(9, 'Relógio', 'S', 6);
 
 -- --------------------------------------------------------
 
@@ -340,7 +374,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `cidades`
@@ -352,7 +386,7 @@ ALTER TABLE `cidades`
 -- AUTO_INCREMENT for table `cores`
 --
 ALTER TABLE `cores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `enderecos`
@@ -382,7 +416,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `marcas`
 --
 ALTER TABLE `marcas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pedidos`
@@ -394,7 +428,7 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `status`
@@ -406,7 +440,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `subcategorias`
 --
 ALTER TABLE `subcategorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
