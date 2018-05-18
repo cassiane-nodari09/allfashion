@@ -1,0 +1,6 @@
+## Start Apache
+
+/etc/init.d/apache2 start;
+
+
+
