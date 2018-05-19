@@ -35,6 +35,10 @@ label[for=azul]:after {
 	left: 120px;
 	background-color: #6666FF;
 }
+label[for=preto]:after {
+	left: 120px;
+	background-color: #000;
+}
 
 .cores input:checked + label:after {
 	border: 6px solid rgba(0,0,0,0.3);
@@ -71,11 +75,14 @@ label[for=azul]:after {
 		display: table-column;
 	}
 }
-
+.imagens-produtos {
+	float: left;
+	width: 40%;
+}
 .produto {
 	color: #333;
 	line-height: 1.3;
-	margin-top: 2em;
+	/* margin-top: 2em; */
 	font-size: 1.2em;   
 }
 
@@ -95,14 +102,21 @@ label[for=azul]:after {
 	font: bold 0.9em/2.5 Arial;
 	text-transform: uppercase;
 }
-
+.imagem-menor {
+	width: 100%;
+    float: left;
+}
+.imagem-menor img {
+	width: 20%;
+	float: left;
+	margin: 0 10px;
+}
 .comprar {
 	background: #91bd3c;
 	border: none;
 	color: #333;
 
 	font-size: 1.4em;
-	text-transform: uppercase;
 
 	box-shadow: 0 1px 3px #777;
 
@@ -118,9 +132,11 @@ label[for=azul]:after {
 		   a esse elemento, por isso preciso estar posicionado
 		 */
 		position: relative;
-		margin-left: 50px;
+		/* margin-left: 50px; */
+		width: 60%;
+		float: right;
 		/* deixo 40% de espaço em branco na esquerda para foto ocupar */
-		padding-left: 40%;
+		/* padding-left: 40%; */
 		font-size: 1.2em;
 	}
    
@@ -176,6 +192,7 @@ label[for=azul]:after {
 .detalhes {
 	padding: 2em 0;
 }
+
 .detalhes h2 {
 	font-size: 1.5em;
 	line-height: 2;

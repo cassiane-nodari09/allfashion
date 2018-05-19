@@ -8,117 +8,137 @@
 	<link rel="stylesheet" href="css/produto.css">
 	
 	<div classe="produto-back">
-		<div class="container">
-			<div class="produto">
-				<?php
-					$id = $_GET['id']; 
-					$produto = $db->executa("SELECT * FROM PRODUTOS WHERE ID = ".$id);
-					$produto = $produto->fetch_array();
-					// print_r($produto);
-				?>
-
-				<!-- <a href="produto.php"><?php //echo utf8_encode($produtos['id']); ?></a> -->
-				<h1><?php echo $produto['nome']?></h1>
-				<p>Por apenas R$<?php echo number_format($produto["preco"], 2, ",", ".")?></p>
-
-				<!-- CRIAR UM NOVO SELECT PARA CADA COR, COLOCAR NUM LAÇO WHILE -->
-				<!-- CRIAR UM NOVO SELECT PARA CADA TAMANHO, COLOCAR NUM LAÇO WHILE -->
-				
-				
-					<form action="checkout.php" method="POST">
-							<fieldset class="cores">
-								<legend>Escolha a cor:</legend>
-
-								<input type="radio" name="cor" value="verde" id="verde" checked>
-								<label for="verde">
-									<img src="img/produtos/foto2-verde.png" alt="verde">
-								</label>
-
-								<input type="radio" name="cor" value="rosa" id="rosa">
-								<label for="rosa">
-									<img src="img/produtos/foto2-rosa.png" alt="rosa">
-								</label>
-
-								<input type="radio" name="cor" value="azul" id="azul">
-								<label for="azul">
-								<img src="img/produtos/foto2-azul.png" alt="azul">
-							
-								<input type="hidden" name="nome" value="Fuzzy Cardigan">
-								<input type="hidden" name="preco" value="129,00">
-
-							</label>
-
-							</fieldset>
-							
-							<div class="tamanho">
-								
-								<legend>Escolha o tamanho:</legend>
-									<label class="radio-inline">
-										<input type="radio" name="optradio">32
-									</label>
-									<label class="radio-inline">
-										<input type="radio" name="optradio">36
-									</label>
-									<label class="radio-inline">
-										<input type="radio" name="optradio">38
-									</label>
-									<label class="radio-inline">
-										<input type="radio" name="optradio">40
-									</label>
-									<br>
-									<label class="radio-inline">
-										<input type="radio" name="optradio">42
-									</label>
-									<label class="radio-inline">
-										<input type="radio" name="optradio">44
-									</label>
-									<label class="radio-inline">
-										<input type="radio" name="optradio">46
-									</label>
-							</div>
-
-							<!-- <fieldset class="tamanhos">
-								<legend>Escolha o tamanho:</legend>
-								<input type="range" min="36" max="46" value="42" step="2" name="tamanho" id="tamanho">
-							</fieldset> -->
-
-							<input type="submit" class="comprar" value="Comprar">
-					</form>
-					<div class="detalhes">
-						<h2>Detalhes do produto</h2>
-
-						<p>Esse é o melhor casaco de Cardigã que você já viu. Excelente
-						material italiano com estampa desenhada pelos artesãos da
-						comunidade de Krotor nas ilhas gregas. Compre já e receba hoje
-						mesmo pela nossa entrega a jato.</p>
-					<table>
-						<thead>
-							<tr>
-								<th>Característica</th>
-								<th>Detalhe</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Modelo</td>
-								<td>Cardigã 7845</td>
-							</tr>
-							<tr>
-								<td>Material</td>
-								<td>Algodão e poliester</td>
-							</tr>
-							<tr>
-								<td>Cores</td>
-								<td>Azul, Rosa e Verde</td>
-							</tr>
-							<tr>
-								<td>Lavagem</td>
-								<td>Lavar a mão</td>
-							</tr>
-						</tbody>
-					</table>
+		<div class="container" style="display: inline-block;">
+			<div class="imagens-produtos">
+				<div style="padding: 20px;">
+					<img src="img/produtos/foto2-rosa.png" alt="rosa" style="width: 100%">
+				</div>
+				<div class="imagem-menor">
+					<img src="img/produtos/foto2-rosa.png" alt="rosa">
+					<img src="img/produtos/foto2-rosa.png" alt="rosa">
+					<img src="img/produtos/foto2-rosa.png" alt="rosa">
 				</div>
 			</div>
+			<div class="produto">
+				<div style="padding: 0 25px;">
+					<?php
+						$id = $_GET['id']; 
+						$produto = $db->executa("SELECT * FROM PRODUTOS WHERE ID = ".$id);
+						$produto = $produto->fetch_array();
+						// print_r($produto);
+					?>
+
+					<!-- <a href="produto.php"><?php //echo utf8_encode($produtos['id']); ?></a> -->
+					<h1><?php echo $produto["nome"]?></h1>
+					<p>Por apenas R$<?php echo number_format($produto["preco"], 2, ",", ".")?></p>
+					
+					<!-- CRIAR UM NOVO SELECT PARA CADA COR, COLOCAR NUM LAÇO WHILE -->
+					<?php
+						$id = $_GET['id']; 
+						// $descricao = $_GET['descricao']; 
+						$cor = $db->executa("SELECT * FROM CORES");
+						// $cor = $cor->fetch_array();
+						// print_r($cor);
+					?>
+					
+					<!-- CRIAR UM NOVO SELECT PARA CADA TAMANHO, COLOCAR NUM LAÇO WHILE -->
+					
+					
+						<form action="checkout.php" method="POST">
+								<fieldset class="cores">
+									<legend>Cor:</legend>
+									<?php while ($row = $cor->fetch_array(MYSQLI_ASSOC)) { ?>
+										<input type="radio" name="cor" value="verde" id="verde" checked >
+										<label for="<?php echo $row['cor'];?>">
+											<!-- <img src="img/produtos/foto2-verde.png" alt="verde"> -->
+										</label>
+									<?php } ?>
+
+									<!-- <input type="radio" name="cor" value="rosa" id="rosa">
+									<label for="rosa">
+									</label> -->
+
+									<input type="radio" name="cor" value="azul" id="azul">
+									<!-- <label for="azul">
+									<img src="img/produtos/foto2-azul.png" alt="azul"> -->
+								
+									<input type="hidden" name="nome" value="Fuzzy Cardigan">
+									<input type="hidden" name="preco" value="129,00">
+
+								</label>
+
+								</fieldset>
+								
+								<div class="tamanho">
+									
+									<legend>Escolha o tamanho:</legend>
+										<label class="radio-inline">
+											<input type="radio" name="optradio">32
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="optradio">36
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="optradio">38
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="optradio">40
+										</label>
+										<br>
+										<label class="radio-inline">
+											<input type="radio" name="optradio">42
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="optradio">44
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="optradio">46
+										</label>
+								</div>
+
+								<!-- <fieldset class="tamanhos">
+									<legend>Escolha o tamanho:</legend>
+									<input type="range" min="36" max="46" value="42" step="2" name="tamanho" id="tamanho">
+								</fieldset> -->
+
+								<input type="submit" class="comprar" value="Adicionar à sacola">
+						</form>
+						<div class="detalhes">
+							<h2>Detalhes do produto</h2>
+							<p>Esse é o melhor casaco de Cardigã que você já viu. Excelente
+							material italiano com estampa desenhada pelos artesãos da
+							comunidade de Krotor nas ilhas gregas. Compre já e receba hoje
+							mesmo pela nossa entrega a jato.</p>
+						<!-- <table>
+							<thead>
+								<tr>
+									<th>Característica</th>
+									<th>Detalhe</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Modelo</td>
+									<td>Cardigã 7845</td>
+								</tr>
+								<tr>
+									<td>Material</td>
+									<td>Algodão e poliester</td>
+								</tr>
+								<tr>
+									<td>Cores</td>
+									<td>Azul, Rosa e Verde</td>
+								</tr>
+								<tr>
+									<td>Lavagem</td>
+									<td>Lavar a mão</td>
+								</tr>
+							</tbody>
+						</table> -->
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>			
 		</div>
 	</div>
 <?php include("rodape.php"); ?>

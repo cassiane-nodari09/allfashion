@@ -69,7 +69,7 @@
       </ol>
       <button type="button">Mostra mais</button>
     </section>
-    <section class="painel mais-vendidos painel-compacto">
+    <!-- <section class="painel mais-vendidos painel-compacto">
       <h2>Mais Vendidos</h2>
       <ol>
         <li>
@@ -139,7 +139,7 @@
 
       </ol>
       <button type="button">Mostra mais</button>
-    </section>
+    </section> -->
   </div>
   <?php include("rodape.php")?>	
 </body>

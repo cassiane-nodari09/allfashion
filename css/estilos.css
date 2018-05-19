@@ -24,7 +24,9 @@ body {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	margin: 0;
 }
-
+.clear {
+	clear: both;
+}
 ul {
 	list-style: none;
 	position: relative;
@@ -141,14 +143,14 @@ header {
 .novidades {
 	float: left;
 	background-color: #f5dcdc;
-	background: linear-gradient(#f5dcdc, #bebef4);
+	background: linear-gradient(#d9d9d9, #f4bebe);
 	background-color: rgb(170, 167, 167);
 }
 
 .mais-vendidos {
 	float: right;
 	background: #dcdcf5;
-	background: linear-gradient(#dcdcf5, #f4bebe);
+	background: linear-gradient(#f4bebe, ##d9d9d9);
 	background-color: rgb(128, 72, 72);
 }
 
@@ -186,6 +188,7 @@ footer {
 	background-image: url(../img/fundo-rodape.png);
 	clear: both;
 	padding: 20px 0;
+	
 }
 
 footer .container {

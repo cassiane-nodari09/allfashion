@@ -27,6 +27,8 @@
       // echo ($sql);
       $result = $db->executa($sql);
     ?>
+
+
       <h2>Novidades</h2>
       <ol>
         <?php while ($row = $result->fetch_array(MYSQLI_ASSOC)) { 
@@ -45,7 +47,8 @@
       <button type="button">Mostra mais</button>
     </section>
     <section class="painel mais-vendidos painel-compacto" style="width: 80%; float: right;">
-      <h2>Mais Vendidos</h2>
+      
+      <!-- <h2>Mais Vendidos</h2>
       <ol>
         <li>
           <a href="produto.html">
@@ -114,7 +117,7 @@
 
       </ol>
       <button type="button">Mostra mais</button>
-    </section>
+    </section> -->
   </div>
   <?php include("rodape.php")?>	
 </body>
