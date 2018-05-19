@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 12-Maio-2018 às 02:58
+-- Generation Time: 19-Maio-2018 às 05:49
 -- Versão do servidor: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -67,18 +67,19 @@ CREATE TABLE `cidades` (
 CREATE TABLE `cores` (
   `id` int(11) NOT NULL,
   `descricao` varchar(45) DEFAULT NULL,
-  `ativo` char(1) DEFAULT 'S'
+  `ativo` char(1) DEFAULT 'S',
+  `cor` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `cores`
 --
 
-INSERT INTO `cores` (`id`, `descricao`, `ativo`) VALUES
-(1, 'Preto', 'S'),
-(2, 'Rosa', 'S'),
-(3, 'Verde', 'S'),
-(4, 'Azul', 'S');
+INSERT INTO `cores` (`id`, `descricao`, `ativo`, `cor`) VALUES
+(1, 'Preto', 'S', 'preto'),
+(2, 'Rosa', 'S', 'rosa'),
+(3, 'Verde', 'S', 'verde'),
+(4, 'Azul', 'S', 'azul');
 
 -- --------------------------------------------------------
 
@@ -122,6 +123,29 @@ CREATE TABLE `faturas` (
   `Status_id` int(11) NOT NULL,
   `Pedidos_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `imagens`
+--
+
+CREATE TABLE `imagens` (
+  ` id` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `caminho` varchar(100) DEFAULT NULL,
+  `Produtos_id` int(11) NOT NULL,
+  `principal` char(1) DEFAULT 'S'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `imagens`
+--
+
+INSERT INTO `imagens` (` id`, `nome`, `caminho`, `Produtos_id`, `principal`) VALUES
+(1, 'foto1-rosa.png', 'img/produtos/', 1, 'S'),
+(2, 'foto2-rosa.png', 'img/produtos/', 4, 'S'),
+(3, 'foto2-rosa.png', 'img/produtos/', 4, 'N');
 
 -- --------------------------------------------------------
 
@@ -199,17 +223,19 @@ CREATE TABLE `produtos` (
   `preco` decimal(12,2) DEFAULT NULL,
   `Marcas_id` int(11) NOT NULL,
   `Categorias_id` int(11) NOT NULL,
-  `Cores_id` int(11) NOT NULL
+  `Cores_id` int(11) NOT NULL,
+  `SubCategorias_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `produtos`
 --
 
-INSERT INTO `produtos` (`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`) VALUES
-(1, 'Fuzz Cardigan', 'Blazer tradicional Hawaiano', 'M', '129.00', 1, 1, 2),
-(2, 'Vestido', 'Vestido social', 'U', '159.00', 2, 4, 1),
-(3, 'Vestido', 'Vestido social', 'U', '159.98', 2, 4, 1);
+INSERT INTO `produtos` (`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES
+(1, 'Fuzz Cardigan', 'Blazer tradicional Hawaiano', 'M', '129.00', 1, 1, 2, 1),
+(2, 'Vestido', 'Vestido social', 'U', '159.00', 2, 4, 1, 0),
+(3, 'Vestido', 'Vestido social', 'U', '159.98', 2, 4, 1, 0),
+(4, 'Swetter', '<p>Esse é o melhor casaco de Cardigã que você já viu. Excelente', 'M', '1085.00', 2, 1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -310,6 +336,13 @@ ALTER TABLE `faturas`
   ADD KEY `fk_Faturas_Pedidos1_idx` (`Pedidos_id`);
 
 --
+-- Indexes for table `imagens`
+--
+ALTER TABLE `imagens`
+  ADD PRIMARY KEY (` id`),
+  ADD KEY `fk_Imagens_Produtos1_idx` (`Produtos_id`);
+
+--
 -- Indexes for table `itempedido`
 --
 ALTER TABLE `itempedido`
@@ -345,7 +378,8 @@ ALTER TABLE `produtos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_Produtos_Marcas1_idx` (`Marcas_id`),
   ADD KEY `fk_Produtos_Categorias1_idx` (`Categorias_id`),
-  ADD KEY `fk_Produtos_Cores1_idx` (`Cores_id`);
+  ADD KEY `fk_Produtos_Cores1_idx` (`Cores_id`),
+  ADD KEY `fk_Produtos_SubCategorias1_idx` (`SubCategorias_id`);
 
 --
 -- Indexes for table `status`
@@ -407,6 +441,12 @@ ALTER TABLE `faturas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `imagens`
+--
+ALTER TABLE `imagens`
+  MODIFY ` id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
@@ -428,7 +468,7 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `status`
@@ -473,6 +513,12 @@ ALTER TABLE `faturas`
   ADD CONSTRAINT `fk_Faturas_Status1` FOREIGN KEY (`Status_id`) REFERENCES `status` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
+-- Limitadores para a tabela `imagens`
+--
+ALTER TABLE `imagens`
+  ADD CONSTRAINT `fk_Imagens_Produtos1` FOREIGN KEY (`Produtos_id`) REFERENCES `produtos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
 -- Limitadores para a tabela `itempedido`
 --
 ALTER TABLE `itempedido`
@@ -498,7 +544,8 @@ ALTER TABLE `pedidos`
 ALTER TABLE `produtos`
   ADD CONSTRAINT `fk_Produtos_Categorias1` FOREIGN KEY (`Categorias_id`) REFERENCES `categorias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Produtos_Cores1` FOREIGN KEY (`Cores_id`) REFERENCES `cores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Produtos_Marcas1` FOREIGN KEY (`Marcas_id`) REFERENCES `marcas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Produtos_Marcas1` FOREIGN KEY (`Marcas_id`) REFERENCES `marcas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Produtos_SubCategorias1` FOREIGN KEY (`SubCategorias_id`) REFERENCES `subcategorias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `subcategorias`
