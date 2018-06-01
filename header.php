@@ -1,6 +1,6 @@
 <header class="container">
-	
-    <!-- <section class="busca">
+
+    <section class="busca">
 			<?php
 				// error_reporting(E_ERROR | E_PARSE);
 				// $lnk = mysqli_connect('localhost','root','') or die(mysqli_error()) or die ('Nao foi possível conectar ao MySql: ' . mysqli_error($lnk));
@@ -9,7 +9,7 @@
 				// $sql = 'SELECT * FROM PRODUTOS ORDER BY nome ASC';
 				// $nome = @$_POST['NOME'];
 
-				// if(!is_null($nome) && !empty($nome)) 
+				// if(!is_null($nome) && !empty($nome))
 				// 		$sql = "SELECT * FROM PRODUTOS WHERE nome LIKE '".$nome."' ORDER BY nome ASC";
 
 				// $qry = mysqli_query($lnk, $sql) or die(mysqli_error($lnk));
@@ -21,7 +21,7 @@
 				// 				$fields[] = mysqli_fetch_field_direct($qry,$i)->name;
 				// 		}
 				// }
-			?> -->
+			?>
 
 			<!-- <h1 style="
 				text-align: center;
@@ -50,8 +50,8 @@
 			// 				echo 'Nenhum registro foi encontrado com o nome ' . $nome;
 			// 		}
 			// }
-		?>			
-		
+		?>
+
 		<h2>Busca</h2>
 
       <form>
@@ -61,7 +61,7 @@
     </section>
 
     <h1>
-      <img src="img/logo12.png" alt="all fashion">
+      <a href="index.php"><img src="img/logo12.png" alt="all fashion"></a>
     </h1>
 
     <p class="sacola">

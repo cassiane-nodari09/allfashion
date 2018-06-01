@@ -10,15 +10,25 @@
     <section class="painel novidades painel-compacto">
       <h2>Novidades</h2>
       <ol>
+        <?php
+          $prod = $db->executa("SELECT p.* FROM produtos p");
+          while ($row = $prod->fetch_array(MYSQLI_ASSOC)) {
+            // print_r($row);
+        ?>
         <li>
-          <a href="produto.html">
+          <a href="produto.php?id=<?php echo $row['id']; ?>">
             <figure>
-              <img src="img/produtos/miniatura1.png">
-              <figcaption>Fuzz Cardigan por R$ 129,90</figcaption>
+              <?php
+              $img_principal = $db->executa("SELECT * FROM imagens WHERE principal = 'S' AND Produtos_id = ".$row['id']);
+              $img_principal = $img_principal->fetch_array();
+              ?>
+              <img src="<?php echo $img_principal['caminho'].$img_principal['nome'];?>">
+              <figcaption> <?php echo $row['nome'];?> R$ <?php echo number_format($row["preco"], 2, ",", ".")?></figcaption>
             </figure>
           </a>
         </li>
-        <li>
+        <?php } ?>
+        <!-- <li>
           <a href="produto.html">
             <figure>
               <img src="img/produtos/miniatura2.png">
@@ -65,7 +75,7 @@
               <figcaption>Fuzz Fitness por R$ 149,90</figcaption>
             </figure>
           </a>
-        </li>
+        </li> -->
       </ol>
       <button type="button">Mostra mais</button>
     </section>
@@ -141,7 +151,7 @@
       <button type="button">Mostra mais</button>
     </section> -->
   </div>
-  <?php include("rodape.php")?>	
+  <?php include("rodape.php")?>
 </body>
 
 </html>

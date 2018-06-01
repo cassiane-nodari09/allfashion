@@ -1,11 +1,11 @@
 <?php
 
 class Conexao {
-    
+
     private $con = null;
     private $host = "localhost";
     private $user = "root";
-    private $pass = "";        
+    private $pass = "root";        
     private $database = "allfashion";
 
     public function __construct() {
@@ -23,9 +23,9 @@ class Conexao {
 
     public function executa ($sql) {
         // $this->con = new Conexao();
-        $this->conecta();  
+        $this->conecta();
         $re = $this->con->query($sql);
         $this->desconecta();
-        return $re; 
+        return $re;
     }
 }

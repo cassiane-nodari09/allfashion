@@ -6,24 +6,31 @@
 
 	<link rel="stylesheet" href="css/mobile.css" media="(max-width: 939px)">
 	<link rel="stylesheet" href="css/produto.css">
-	
+
 	<div classe="produto-back">
 		<div class="container" style="display: inline-block;">
 			<div class="imagens-produtos">
+				<?php
+					$id = $_GET['id'];
+					$img_principal = $db->executa("SELECT * FROM imagens WHERE principal = 'S' AND Produtos_id = ".$id);
+					$img_principal = $img_principal->fetch_array();
+				?>
 				<div style="padding: 20px;">
-					<img src="img/produtos/foto2-rosa.png" alt="rosa" style="width: 100%">
+					<img src="<?php echo $img_principal['caminho'].$img_principal['nome']; ?>" alt="rosa" style="width: 100%">
 				</div>
 				<div class="imagem-menor">
-					<img src="img/produtos/foto2-rosa.png" alt="rosa">
-					<img src="img/produtos/foto2-rosa.png" alt="rosa">
-					<img src="img/produtos/foto2-rosa.png" alt="rosa">
+					<?php
+						$imgs = $db->executa("SELECT * FROM imagens WHERE Produtos_id = ".$id);
+						while ($row = $imgs->fetch_array(MYSQLI_ASSOC)) {
+					?>
+							<img src="<?php echo $row['caminho'].$row['nome']; ?>" alt="rosa">
+						<?php } ?>
 				</div>
 			</div>
 			<div class="produto">
 				<div style="padding: 0 25px;">
 			  		<?php
-						$id = $_GET['id']; 
-						$produto = $db->executa("SELECT * FROM PRODUTOS WHERE ID = ".$id);
+						$produto = $db->executa("SELECT * FROM produtos WHERE ID = ".$id);
 						$produto = $produto->fetch_array();
 						// print_r($produto);
 					?>
@@ -31,19 +38,19 @@
 					<!-- <a href="produto.php"><?php //echo utf8_encode($produtos['id']); ?></a> -->
 					<h1><?php echo $produto["nome"]?></h1>
 					<p>Por apenas R$<?php echo number_format($produto["preco"], 2, ",", ".")?></p>
-					
+
 					<!-- CRIAR UM NOVO SELECT PARA CADA COR, COLOCAR NUM LAÇO WHILE -->
 					<?php
-						$id = $_GET['id']; 
-						// $descricao = $_GET['descricao']; 
-						$cor = $db->executa("SELECT * FROM CORES");
+						$id = $_GET['id'];
+						// $descricao = $_GET['descricao'];
+						$cor = $db->executa("SELECT * FROM cores");
 						// $cor = $cor->fetch_array();
 						// print_r($cor);
 					?>
-					
+
 					<!-- CRIAR UM NOVO SELECT PARA CADA TAMANHO, COLOCAR NUM LAÇO WHILE -->
-					
-					
+
+
 					<form action="checkout.php" method="POST">
 						<fieldset class="cores">
 							<legend>Cor:</legend>
@@ -61,7 +68,7 @@
 							<input type="radio" name="cor" value="azul" id="azul">
 							<!-- <label for="azul">
 							<img src="img/produtos/foto2-azul.png" alt="azul"> -->
-						
+
 							<input type="hidden" name="nome" value="Fuzzy Cardigan">
 							<input type="hidden" name="preco" value="129,00">
 						</label>
@@ -133,7 +140,7 @@
 				</div>
 				</div>
 			</div>
-			<div class="clear"></div>			
+			<div class="clear"></div>
 		</div>
 	</div>
 <?php include("rodape.php"); ?>
