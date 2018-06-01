@@ -1,222 +1,335 @@
--- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- MySQL dump 10.13  Distrib 5.7.22, for Linux (x86_64)
 --
--- Host: 127.0.0.1
--- Generation Time: 19-Maio-2018 às 05:49
--- Versão do servidor: 10.1.28-MariaDB
--- PHP Version: 7.1.11
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
+-- Host: 127.0.0.1    Database: allfashion
+-- ------------------------------------------------------
+-- Server version	5.7.22-0ubuntu18.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Database: `allfashion`
+-- Table structure for table `categorias`
 --
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `categorias`
---
-
+DROP TABLE IF EXISTS `categorias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `categorias` (
-  `id` int(11) NOT NULL,
-  `descricao` varchar(45) DEFAULT NULL,
-  `ativo` char(1) DEFAULT 'S'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `categorias`
---
-
-INSERT INTO `categorias` (`id`, `descricao`, `ativo`) VALUES
-(1, 'Blusas e Camisas', 'S'),
-(2, 'Calças', 'S'),
-(3, 'Saias', 'S'),
-(4, 'Vestidos', 'S'),
-(5, 'Bolsas', 'S'),
-(6, 'Acessórios', 'S');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `cidades`
---
-
-CREATE TABLE `cidades` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(45) DEFAULT NULL,
-  `Estados_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `cores`
---
-
-CREATE TABLE `cores` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `descricao` varchar(45) DEFAULT NULL,
   `ativo` char(1) DEFAULT 'S',
-  `cor` varchar(45) DEFAULT NULL
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categorias`
+--
+
+LOCK TABLES `categorias` WRITE;
+/*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
+INSERT INTO `categorias` VALUES (1,'Blusas e Camisas','S'),(2,'Calças','S'),(3,'Saias','S'),(4,'Vestidos','S'),(5,'Bolsas','S'),(6,'Acessórios','S');
+/*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cidades`
+--
+
+DROP TABLE IF EXISTS `cidades`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cidades` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) DEFAULT NULL,
+  `Estados_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_Cidades_Estados_idx` (`Estados_id`),
+  CONSTRAINT `fk_Cidades_Estados` FOREIGN KEY (`Estados_id`) REFERENCES `estados` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Extraindo dados da tabela `cores`
+-- Dumping data for table `cidades`
 --
 
-INSERT INTO `cores` (`id`, `descricao`, `ativo`, `cor`) VALUES
-(1, 'Preto', 'S', 'preto'),
-(2, 'Rosa', 'S', 'rosa'),
-(3, 'Verde', 'S', 'verde'),
-(4, 'Azul', 'S', 'azul');
-
--- --------------------------------------------------------
+LOCK TABLES `cidades` WRITE;
+/*!40000 ALTER TABLE `cidades` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cidades` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Estrutura da tabela `enderecos`
+-- Table structure for table `cores`
 --
 
+DROP TABLE IF EXISTS `cores`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cores` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(45) DEFAULT NULL,
+  `ativo` char(1) DEFAULT 'S',
+  `cor` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cores`
+--
+
+LOCK TABLES `cores` WRITE;
+/*!40000 ALTER TABLE `cores` DISABLE KEYS */;
+INSERT INTO `cores` VALUES (1,'Preto','S','preto'),(2,'Rosa','S','rosa'),(3,'Verde','S','verde'),(4,'Azul','S','azul');
+/*!40000 ALTER TABLE `cores` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `enderecos`
+--
+
+DROP TABLE IF EXISTS `enderecos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enderecos` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `rua` varchar(45) DEFAULT NULL,
   `numero` varchar(45) DEFAULT NULL,
   `complemento` varchar(45) DEFAULT NULL,
   `cep` varchar(45) DEFAULT NULL,
   `bairro` varchar(45) DEFAULT NULL,
   `Cidades_id` int(11) NOT NULL,
-  `Usuarios_id` int(11) NOT NULL
+  `Usuarios_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_Enderecos_Cidades1_idx` (`Cidades_id`),
+  KEY `fk_Enderecos_Usuarios1_idx` (`Usuarios_id`),
+  CONSTRAINT `fk_Enderecos_Cidades1` FOREIGN KEY (`Cidades_id`) REFERENCES `cidades` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Enderecos_Usuarios1` FOREIGN KEY (`Usuarios_id`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Estrutura da tabela `estados`
+-- Dumping data for table `enderecos`
 --
 
+LOCK TABLES `enderecos` WRITE;
+/*!40000 ALTER TABLE `enderecos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `enderecos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `estados`
+--
+
+DROP TABLE IF EXISTS `estados`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `estados` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) DEFAULT NULL,
-  `uf` char(2) DEFAULT NULL
+  `uf` char(2) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Estrutura da tabela `faturas`
+-- Dumping data for table `estados`
 --
 
+LOCK TABLES `estados` WRITE;
+/*!40000 ALTER TABLE `estados` DISABLE KEYS */;
+/*!40000 ALTER TABLE `estados` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `faturas`
+--
+
+DROP TABLE IF EXISTS `faturas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `faturas` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `valor` decimal(12,2) DEFAULT NULL,
   `parcela` int(11) DEFAULT NULL,
   `Status_id` int(11) NOT NULL,
-  `Pedidos_id` int(11) NOT NULL
+  `Pedidos_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_Faturas_Status1_idx` (`Status_id`),
+  KEY `fk_Faturas_Pedidos1_idx` (`Pedidos_id`),
+  CONSTRAINT `fk_Faturas_Pedidos1` FOREIGN KEY (`Pedidos_id`) REFERENCES `pedidos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Faturas_Status1` FOREIGN KEY (`Status_id`) REFERENCES `status` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Estrutura da tabela `imagens`
+-- Dumping data for table `faturas`
 --
 
+LOCK TABLES `faturas` WRITE;
+/*!40000 ALTER TABLE `faturas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `faturas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `imagens`
+--
+
+DROP TABLE IF EXISTS `imagens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `imagens` (
-  ` id` int(11) NOT NULL,
+  ` id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `caminho` varchar(100) DEFAULT NULL,
   `Produtos_id` int(11) NOT NULL,
-  `principal` char(1) DEFAULT 'S'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `principal` char(1) DEFAULT 'S',
+  PRIMARY KEY (` id`),
+  KEY `fk_Imagens_Produtos1_idx` (`Produtos_id`),
+  CONSTRAINT `fk_Imagens_Produtos1` FOREIGN KEY (`Produtos_id`) REFERENCES `produtos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Extraindo dados da tabela `imagens`
+-- Dumping data for table `imagens`
 --
 
-INSERT INTO `imagens` (` id`, `nome`, `caminho`, `Produtos_id`, `principal`) VALUES
-(1, 'foto1-rosa.png', 'img/produtos/', 1, 'S'),
-(2, 'foto2-rosa.png', 'img/produtos/', 4, 'S'),
-(3, 'foto2-rosa.png', 'img/produtos/', 4, 'N');
-
--- --------------------------------------------------------
+LOCK TABLES `imagens` WRITE;
+/*!40000 ALTER TABLE `imagens` DISABLE KEYS */;
+INSERT INTO `imagens` VALUES (1,'foto1-rosa.png','img/produtos/',1,'S'),(2,'foto2-rosa.png','img/produtos/',4,'S'),(3,'foto1-rosa.png','img/produtos/',4,'N'),(4,'foto2-rosa.png','img/produtos/',4,'N'),(5,'foto2-rosa.png','img/produtos/',4,'N'),(6,'foto2-rosa.png','img/produtos/',4,'N'),(7,'foto2-rosa.png','img/produtos/',4,'N'),(8,'foto2-rosa.png','img/produtos/',4,'N');
+/*!40000 ALTER TABLE `imagens` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Estrutura da tabela `itempedido`
+-- Table structure for table `itempedido`
 --
 
+DROP TABLE IF EXISTS `itempedido`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `itempedido` (
   `Pedidos_id` int(11) NOT NULL,
   `Produtos_id` int(11) NOT NULL,
   `descricao` varchar(45) DEFAULT NULL,
-  `quatidade` int(11) DEFAULT NULL
+  `quatidade` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Pedidos_id`,`Produtos_id`),
+  KEY `fk_Pedidos_has_Produtos_Produtos1_idx` (`Produtos_id`),
+  KEY `fk_Pedidos_has_Produtos_Pedidos1_idx` (`Pedidos_id`),
+  CONSTRAINT `fk_Pedidos_has_Produtos_Pedidos1` FOREIGN KEY (`Pedidos_id`) REFERENCES `pedidos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Pedidos_has_Produtos_Produtos1` FOREIGN KEY (`Produtos_id`) REFERENCES `produtos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Estrutura da tabela `login`
+-- Dumping data for table `itempedido`
 --
 
+LOCK TABLES `itempedido` WRITE;
+/*!40000 ALTER TABLE `itempedido` DISABLE KEYS */;
+/*!40000 ALTER TABLE `itempedido` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `login`
+--
+
+DROP TABLE IF EXISTS `login`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `login` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(45) DEFAULT NULL,
   `senha` varchar(45) DEFAULT NULL,
-  `Usuarios_id` int(11) NOT NULL
+  `Usuarios_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_Login_Usuarios1_idx` (`Usuarios_id`),
+  CONSTRAINT `fk_Login_Usuarios1` FOREIGN KEY (`Usuarios_id`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Estrutura da tabela `marcas`
+-- Dumping data for table `login`
 --
 
+LOCK TABLES `login` WRITE;
+/*!40000 ALTER TABLE `login` DISABLE KEYS */;
+/*!40000 ALTER TABLE `login` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `marcas`
+--
+
+DROP TABLE IF EXISTS `marcas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `marcas` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `descricao` varchar(45) DEFAULT NULL,
-  `ativo` char(1) DEFAULT 'S'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `ativo` char(1) DEFAULT 'S',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Extraindo dados da tabela `marcas`
+-- Dumping data for table `marcas`
 --
 
-INSERT INTO `marcas` (`id`, `descricao`, `ativo`) VALUES
-(1, 'Armani', 'S'),
-(2, 'Balmain', 'S');
-
--- --------------------------------------------------------
+LOCK TABLES `marcas` WRITE;
+/*!40000 ALTER TABLE `marcas` DISABLE KEYS */;
+INSERT INTO `marcas` VALUES (1,'Armani','S'),(2,'Balmain','S');
+/*!40000 ALTER TABLE `marcas` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Estrutura da tabela `pedidos`
+-- Table structure for table `pedidos`
 --
 
+DROP TABLE IF EXISTS `pedidos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pedidos` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `data_ini` date DEFAULT NULL,
   `data_fim` date DEFAULT NULL,
   `validade` varchar(45) DEFAULT NULL,
   `valorTotal` decimal(12,2) DEFAULT NULL,
   `Usuarios_id` int(11) NOT NULL,
-  `Status_id` int(11) NOT NULL
+  `Status_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_Pedidos_Usuarios1_idx` (`Usuarios_id`),
+  KEY `fk_Pedidos_Status1_idx` (`Status_id`),
+  CONSTRAINT `fk_Pedidos_Status1` FOREIGN KEY (`Status_id`) REFERENCES `status` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Pedidos_Usuarios1` FOREIGN KEY (`Usuarios_id`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Estrutura da tabela `produtos`
+-- Dumping data for table `pedidos`
 --
 
+LOCK TABLES `pedidos` WRITE;
+/*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `produtos`
+--
+
+DROP TABLE IF EXISTS `produtos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `produtos` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) DEFAULT NULL,
   `descricao` text,
   `tamanho` char(1) DEFAULT NULL,
@@ -224,336 +337,110 @@ CREATE TABLE `produtos` (
   `Marcas_id` int(11) NOT NULL,
   `Categorias_id` int(11) NOT NULL,
   `Cores_id` int(11) NOT NULL,
-  `SubCategorias_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `SubCategorias_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_Produtos_Marcas1_idx` (`Marcas_id`),
+  KEY `fk_Produtos_Categorias1_idx` (`Categorias_id`),
+  KEY `fk_Produtos_Cores1_idx` (`Cores_id`),
+  KEY `fk_Produtos_SubCategorias1_idx` (`SubCategorias_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Extraindo dados da tabela `produtos`
+-- Dumping data for table `produtos`
 --
 
-INSERT INTO `produtos` (`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES
-(1, 'Fuzz Cardigan', 'Blazer tradicional Hawaiano', 'M', '129.00', 1, 1, 2, 1),
-(2, 'Vestido', 'Vestido social', 'U', '159.00', 2, 4, 1, 0),
-(3, 'Vestido', 'Vestido social', 'U', '159.98', 2, 4, 1, 0),
-(4, 'Swetter', '<p>Esse é o melhor casaco de Cardigã que você já viu. Excelente', 'M', '1085.00', 2, 1, 2, 1);
-
--- --------------------------------------------------------
+LOCK TABLES `produtos` WRITE;
+/*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
+INSERT INTO `produtos` VALUES (1,'Fuzz Cardigan','Blazer tradicional Hawaiano','M',129.00,1,1,2,1),(2,'Vestido','Vestido social','U',159.00,2,4,1,0),(3,'Vestido','Vestido social','U',159.98,2,4,1,0),(4,'Swetter','<p>Esse é o melhor casaco de Cardigã que você já viu. Excelente','M',1085.00,2,1,2,1);
+/*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Estrutura da tabela `status`
+-- Table structure for table `status`
 --
 
+DROP TABLE IF EXISTS `status`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `status` (
-  `id` int(11) NOT NULL,
-  `descricao` varchar(45) DEFAULT NULL,
-  `ativo` char(1) DEFAULT 'S'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `subcategorias`
---
-
-CREATE TABLE `subcategorias` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `descricao` varchar(45) DEFAULT NULL,
   `ativo` char(1) DEFAULT 'S',
-  `Categorias_id` int(11) NOT NULL
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Extraindo dados da tabela `subcategorias`
+-- Dumping data for table `status`
 --
 
-INSERT INTO `subcategorias` (`id`, `descricao`, `ativo`, `Categorias_id`) VALUES
-(1, 'Manga Curta', 'S', 1),
-(2, 'Manga Longa', 'S', 1),
-(5, 'Flare', 'S', 2),
-(6, 'Legging ', 'S', 2),
-(7, 'Anel', 'S', 6),
-(8, 'Colar', 'S', 6),
-(9, 'Relógio', 'S', 6);
-
--- --------------------------------------------------------
+LOCK TABLES `status` WRITE;
+/*!40000 ALTER TABLE `status` DISABLE KEYS */;
+/*!40000 ALTER TABLE `status` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Estrutura da tabela `usuarios`
+-- Table structure for table `subcategorias`
 --
 
+DROP TABLE IF EXISTS `subcategorias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `subcategorias` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(45) DEFAULT NULL,
+  `ativo` char(1) DEFAULT 'S',
+  `Categorias_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_SubCategorias_Categorias1_idx` (`Categorias_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `subcategorias`
+--
+
+LOCK TABLES `subcategorias` WRITE;
+/*!40000 ALTER TABLE `subcategorias` DISABLE KEYS */;
+INSERT INTO `subcategorias` VALUES (1,'Manga Curta','S',1),(2,'Manga Longa','S',1),(5,'Flare','S',2),(6,'Legging ','S',2),(7,'Anel','S',6),(8,'Colar','S',6),(9,'Relógio','S',6);
+/*!40000 ALTER TABLE `subcategorias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   `cpf` varchar(45) DEFAULT NULL,
   `sexo` char(1) DEFAULT NULL,
-  `telefone` int(11) DEFAULT NULL
+  `telefone` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Indexes for dumped tables
+-- Dumping data for table `usuarios`
 --
 
---
--- Indexes for table `categorias`
---
-ALTER TABLE `categorias`
-  ADD PRIMARY KEY (`id`);
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
---
--- Indexes for table `cidades`
---
-ALTER TABLE `cidades`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_Cidades_Estados_idx` (`Estados_id`);
-
---
--- Indexes for table `cores`
---
-ALTER TABLE `cores`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `enderecos`
---
-ALTER TABLE `enderecos`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_Enderecos_Cidades1_idx` (`Cidades_id`),
-  ADD KEY `fk_Enderecos_Usuarios1_idx` (`Usuarios_id`);
-
---
--- Indexes for table `estados`
---
-ALTER TABLE `estados`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `faturas`
---
-ALTER TABLE `faturas`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_Faturas_Status1_idx` (`Status_id`),
-  ADD KEY `fk_Faturas_Pedidos1_idx` (`Pedidos_id`);
-
---
--- Indexes for table `imagens`
---
-ALTER TABLE `imagens`
-  ADD PRIMARY KEY (` id`),
-  ADD KEY `fk_Imagens_Produtos1_idx` (`Produtos_id`);
-
---
--- Indexes for table `itempedido`
---
-ALTER TABLE `itempedido`
-  ADD PRIMARY KEY (`Pedidos_id`,`Produtos_id`),
-  ADD KEY `fk_Pedidos_has_Produtos_Produtos1_idx` (`Produtos_id`),
-  ADD KEY `fk_Pedidos_has_Produtos_Pedidos1_idx` (`Pedidos_id`);
-
---
--- Indexes for table `login`
---
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_Login_Usuarios1_idx` (`Usuarios_id`);
-
---
--- Indexes for table `marcas`
---
-ALTER TABLE `marcas`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `pedidos`
---
-ALTER TABLE `pedidos`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_Pedidos_Usuarios1_idx` (`Usuarios_id`),
-  ADD KEY `fk_Pedidos_Status1_idx` (`Status_id`);
-
---
--- Indexes for table `produtos`
---
-ALTER TABLE `produtos`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_Produtos_Marcas1_idx` (`Marcas_id`),
-  ADD KEY `fk_Produtos_Categorias1_idx` (`Categorias_id`),
-  ADD KEY `fk_Produtos_Cores1_idx` (`Cores_id`),
-  ADD KEY `fk_Produtos_SubCategorias1_idx` (`SubCategorias_id`);
-
---
--- Indexes for table `status`
---
-ALTER TABLE `status`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `subcategorias`
---
-ALTER TABLE `subcategorias`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_SubCategorias_Categorias1_idx` (`Categorias_id`);
-
---
--- Indexes for table `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `categorias`
---
-ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `cidades`
---
-ALTER TABLE `cidades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `cores`
---
-ALTER TABLE `cores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `enderecos`
---
-ALTER TABLE `enderecos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `estados`
---
-ALTER TABLE `estados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `faturas`
---
-ALTER TABLE `faturas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `imagens`
---
-ALTER TABLE `imagens`
-  MODIFY ` id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `login`
---
-ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `marcas`
---
-ALTER TABLE `marcas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `pedidos`
---
-ALTER TABLE `pedidos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `produtos`
---
-ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `status`
---
-ALTER TABLE `status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `subcategorias`
---
-ALTER TABLE `subcategorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Constraints for dumped tables
---
-
---
--- Limitadores para a tabela `cidades`
---
-ALTER TABLE `cidades`
-  ADD CONSTRAINT `fk_Cidades_Estados` FOREIGN KEY (`Estados_id`) REFERENCES `estados` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `enderecos`
---
-ALTER TABLE `enderecos`
-  ADD CONSTRAINT `fk_Enderecos_Cidades1` FOREIGN KEY (`Cidades_id`) REFERENCES `cidades` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Enderecos_Usuarios1` FOREIGN KEY (`Usuarios_id`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `faturas`
---
-ALTER TABLE `faturas`
-  ADD CONSTRAINT `fk_Faturas_Pedidos1` FOREIGN KEY (`Pedidos_id`) REFERENCES `pedidos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Faturas_Status1` FOREIGN KEY (`Status_id`) REFERENCES `status` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `imagens`
---
-ALTER TABLE `imagens`
-  ADD CONSTRAINT `fk_Imagens_Produtos1` FOREIGN KEY (`Produtos_id`) REFERENCES `produtos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `itempedido`
---
-ALTER TABLE `itempedido`
-  ADD CONSTRAINT `fk_Pedidos_has_Produtos_Pedidos1` FOREIGN KEY (`Pedidos_id`) REFERENCES `pedidos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Pedidos_has_Produtos_Produtos1` FOREIGN KEY (`Produtos_id`) REFERENCES `produtos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `login`
---
-ALTER TABLE `login`
-  ADD CONSTRAINT `fk_Login_Usuarios1` FOREIGN KEY (`Usuarios_id`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `pedidos`
---
-ALTER TABLE `pedidos`
-  ADD CONSTRAINT `fk_Pedidos_Status1` FOREIGN KEY (`Status_id`) REFERENCES `status` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Pedidos_Usuarios1` FOREIGN KEY (`Usuarios_id`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `produtos`
---
-ALTER TABLE `produtos`
-  ADD CONSTRAINT `fk_Produtos_Categorias1` FOREIGN KEY (`Categorias_id`) REFERENCES `categorias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Produtos_Cores1` FOREIGN KEY (`Cores_id`) REFERENCES `cores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Produtos_Marcas1` FOREIGN KEY (`Marcas_id`) REFERENCES `marcas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Produtos_SubCategorias1` FOREIGN KEY (`SubCategorias_id`) REFERENCES `subcategorias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `subcategorias`
---
-ALTER TABLE `subcategorias`
-  ADD CONSTRAINT `fk_SubCategorias_Categorias1` FOREIGN KEY (`Categorias_id`) REFERENCES `categorias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
-
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-05-31 22:53:01
