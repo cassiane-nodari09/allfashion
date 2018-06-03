@@ -7,8 +7,7 @@
 	<link rel="stylesheet" href="css/mobile.css" media="(max-width: 939px)">
 	<link rel="stylesheet" href="css/produto.css">
 
-	<div classe="produto-back">
-		<div class="container" style="display: inline-block;">
+		<div class="container">
 			<div class="imagens-produtos">
 				<?php
 					$id = $_GET['id'];
@@ -142,5 +141,4 @@
 			</div>
 			<div class="clear"></div>
 		</div>
-	</div>
 <?php include("rodape.php"); ?>

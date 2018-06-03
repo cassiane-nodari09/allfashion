@@ -7,6 +7,7 @@
       <!-- <link rel="stylesheet" href="css/reset.css"> -->
       <link rel="stylesheet" href="css/estilos.css">
       <link rel="stylesheet" href="css/mobile.css" media="(max-width: 939px)">
+		  <link rel="stylesheet" href="css/bootstrap.css">
       <?php print @$cabecalho_css; ?>
       <link href='https://fonts.googleapis.com/css?family=PT+Sans|Bad+Script' rel='stylesheet' type='text/css'>
       <meta name="viewport" content="width=device-width">

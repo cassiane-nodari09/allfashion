@@ -3,12 +3,12 @@
   <?php include("header.php");?>
   <div class="container destaque">
     <?php include("menu.php");?>
-  </div>
+  <!-- </div>
 
-  <div class="container paineis">
+  <div class="container paineis"> -->
     
     <!-- os paineis de novidades e mais vendidos entrarão aqui dentro -->
-    <section class="painel novidades painel-compacto" style="width: 80%; float: right;">
+    <section class="painel novidades painel-compacto" style="width: 78%; float: right;">
 
     <?php 
       $categoria = $_GET["cat_id"];
