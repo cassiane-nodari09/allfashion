@@ -13,16 +13,19 @@
     <?php 
       $categoria = $_GET["cat_id"];
       $subcategoria = $_GET["sub_cat_id"];
+      // echo ($categoria);
+      // echo ($subcategoria);
       $filtro="";
-      if($subcategoria =! -1){
-        $filtro = " AND SUBCATEGORIAS_ID =".$subcategoria;
+      if($categoria != -1){
+        $filtro .= " AND CATEGORIAS_ID =".$categoria;
+      }
+      if($subcategoria != -1){
+        $filtro .= " AND SUBCATEGORIAS_ID =".$subcategoria;
       }
       // $sql = "SELECT * FROM produtos where CATEGORIAS_ID =".$categoria.$filtro;
-      $sql = "SELECT p.*, i.caminho, i.nome AS imagem 
+      $sql = "SELECT p.*
               FROM produtos p
-              LEFT JOIN imagens i on i.produtos_id = p.id
-              WHERE CATEGORIAS_ID =".$categoria.$filtro."  
-              AND i.principal = 'S'";
+              WHERE 1=1 ".$filtro;
       
       // echo ($sql);
       $result = $db->executa($sql);
@@ -37,7 +40,11 @@
           <li>
             <a href="produto.php?id=<?php echo $row['id']?>">
               <figure>
-                <img src="<?php echo $row["caminho"].$row["imagem"]?>">
+                <?php
+                $img_principal = $db->executa("SELECT * FROM imagens WHERE principal = 'S' AND Produtos_id = ".$row['id']);
+                $img_principal = $img_principal->fetch_array();
+                ?>
+                <img src="<?php echo $img_principal["caminho"].$img_principal["nome"]?>">
                 <figcaption><?php echo $row["nome"]?> por R$ <?php echo number_format($row["preco"], 2, ",", ".")?></figcaption>
               </figure>
             </a>

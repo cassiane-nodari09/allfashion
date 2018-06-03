@@ -12,7 +12,7 @@
 			<div class="imagens-produtos">
 				<?php
 					$id = $_GET['id'];
-					$img_principal = $db->executa("SELECT * FROM imagens WHERE principal = 'S' AND Produtos_id = ".$id);
+					$img_principal = $db->executa("SELECT * FROM IMAGENS WHERE principal = 'S' AND Produtos_id = ".$id);
 					$img_principal = $img_principal->fetch_array();
 				?>
 				<div style="padding: 20px;">
@@ -20,7 +20,7 @@
 				</div>
 				<div class="imagem-menor">
 					<?php
-						$imgs = $db->executa("SELECT * FROM imagens WHERE Produtos_id = ".$id);
+						$imgs = $db->executa("SELECT * FROM IMAGENS WHERE Produtos_id = ".$id);
 						while ($row = $imgs->fetch_array(MYSQLI_ASSOC)) {
 					?>
 							<img src="<?php echo $row['caminho'].$row['nome']; ?>" alt="rosa">
@@ -30,7 +30,7 @@
 			<div class="produto">
 				<div style="padding: 0 25px;">
 			  		<?php
-						$produto = $db->executa("SELECT * FROM produtos WHERE ID = ".$id);
+						$produto = $db->executa("SELECT * FROM PRODUTOS WHERE ID = ".$id);
 						$produto = $produto->fetch_array();
 						// print_r($produto);
 					?>
@@ -43,7 +43,7 @@
 					<?php
 						$id = $_GET['id'];
 						// $descricao = $_GET['descricao'];
-						$cor = $db->executa("SELECT * FROM cores");
+						$cor = $db->executa("SELECT * FROM CORES");
 						// $cor = $cor->fetch_array();
 						// print_r($cor);
 					?>

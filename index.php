@@ -11,7 +11,7 @@
       <h2>Novidades</h2>
       <ol>
         <?php
-          $prod = $db->executa("SELECT p.* FROM produtos p");
+          $prod = $db->executa("SELECT p.* FROM produtos p LIMIT 6");
           while ($row = $prod->fetch_array(MYSQLI_ASSOC)) {
             // print_r($row);
         ?>
@@ -28,54 +28,6 @@
           </a>
         </li>
         <?php } ?>
-        <!-- <li>
-          <a href="produto.html">
-            <figure>
-              <img src="img/produtos/miniatura2.png">
-              <figcaption>T-shirt por R$ 59,90</figcaption>
-            </figure>
-          </a>
-        </li>
-        <li>
-          <a href="produto.html">
-            <figure>
-              <img src="img/produtos/miniatura3.png">
-              <figcaption>Sueter por R$ 99,90</figcaption>
-            </figure>
-          </a>
-        </li>
-        <li>
-          <a href="produto.html">
-            <figure>
-              <img src="img/produtos/miniatura4.png">
-              <figcaption>Casaco Bindolo R$ 229,90</figcaption>
-            </figure>
-          </a>
-        </li>
-        <li>
-          <a href="produto.html">
-            <figure>
-              <img src="img/produtos/miniatura5.png">
-              <figcaption>Fuzz Fitness por R$ 29,90</figcaption>
-            </figure>
-          </a>
-        </li>
-        <li>
-          <a href="produto.html">
-            <figure>
-              <img src="img/produtos/miniatura6.png">
-              <figcaption>Fuzz Gymfit por R$ 29,90</figcaption>
-            </figure>
-          </a>
-        </li>
-        <li>
-          <a href="produto.html">
-            <figure>
-              <img src="img/produtos/miniatura9.png">
-              <figcaption>Fuzz Fitness por R$ 149,90</figcaption>
-            </figure>
-          </a>
-        </li> -->
       </ol>
       <button type="button">Mostra mais</button>
     </section>

@@ -23,6 +23,7 @@ body {
 	color: #333333;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	margin: 0;
+	background-color: #d9d9d9;
 }
 .clear {
 	clear: both;
@@ -33,7 +34,7 @@ ul {
 }
 
 ul li itens:hover {
-	background: #ccc;
+	background: #d9d9d9;
 }
 
 ul li {
@@ -99,7 +100,7 @@ header {
 }
 
 .menu-departamentos li {
-  background-color: white;
+  background-color: #d9d9d9;
   margin-bottom: 1px;
   padding: 5px 10px;
 }
@@ -133,25 +134,23 @@ header {
 	width: auto;
 }
 
-.painel-compacto li:nth-child(n+7) {
+/* .painel-compacto li:nth-child(n+7) {
 	display: none;
-}
+} */
 .painel-compacto button {
 	display: block;
 }
 
 .novidades {
 	float: left;
-	background-color: #f5dcdc;
-	background: linear-gradient(#d9d9d9, #f4bebe);
-	background-color: rgb(170, 167, 167);
+	background-color: #d9d9d9;
+	background-color: #d9d9d9;
 }
 
 .mais-vendidos {
 	float: right;
 	background: #dcdcf5;
-	background: linear-gradient(#f4bebe, ##d9d9d9);
-	background-color: rgb(128, 72, 72);
+	background-color: #d9d9d9;
 }
 
 .painel li {
@@ -254,6 +253,8 @@ footer .container {
 .painel {
 	border-radius: 4px;
 	box-shadow: inset 1px 1px 4px #999;
+	margin-bottom: 25px;
+    margin-top: 25px;
 }
 
 .painel h2 {
