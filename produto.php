@@ -50,25 +50,24 @@
 					<!-- CRIAR UM NOVO SELECT PARA CADA TAMANHO, COLOCAR NUM LAÇO WHILE -->
 
 
-					<form action="sacola.php?acao=add&id=<?php echo $_GET['id'];?>" method="POST">
+					<form action="addSacola.php?acao=add&id=<?php echo $_GET['id'];?>" method="POST">
 						<fieldset class="cores">
 
 							<legend>Cor:</legend>
 							<?php while ($row = $cor->fetch_array(MYSQLI_ASSOC)) { ?>
-								<input type="radio" name="cor" value="verde" id="verde" required>
+								<input type="radio" name="cor" value="verde">
 								<label for="<?php echo $row['cor'];?>">
-									<!-- <img src="img/produtos/foto2-verde.png" alt="verde"> -->
 								</label>
 							<?php } ?>
 
 							<!-- <input type="radio" name="cor" value="rosa" id="rosa">
 							<label for="rosa">
 							</label> -->
-<!-- 
+<!--
 							<input type="radio" name="cor" value="azul" id="azul"> -->
 							<!-- <label for="azul">
 							<img src="img/produtos/foto2-azul.png" alt="azul"> -->
-<!-- 
+<!--
 							<input type="hidden" name="nome" value="Fuzzy Cardigan">
 							<input type="hidden" name="preco" value="129,00"> -->
 						</label>

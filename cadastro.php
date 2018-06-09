@@ -1,40 +1,34 @@
-<?php include("cabecalho.php");?>
-<?php include("header.php");?>
-
 <?php
     include_once 'config/conexao.php';
     $db = new Conexao();
-  ?>
 
-<?php 
- 
-    $login = $_POST['login'];
+    // print_r($_POST);exit;
+
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    // $email = "cassi.nodari@hotmail.com";
+    $cpf = $_POST['cpf'];
     $senha = MD5($_POST['senha']);
-    // $con = mysqli_connect('localhost', 'root', '', 'allfashion');
     // $db = mysqli_select_db('allfashion');
-    $query_select = "SELECT login FROM USUARIOS WHERE login = '$login'";
-    $select = mysqli_query($query_select,$con);
-    $array = mysqli_fetch_array($select);
-    $logarray = $array['login'];
-    
-    if($login == "" || $login == null){
-        echo"<script language='javascript' type='text/javascript'>alert('O campo login deve ser preenchido');window.location.href='formCadastro.php';</script>";
-    
-        }else{
-            if($logarray == $login){
-        
-                echo"<script language='javascript' type='text/javascript'>alert('Esse login já existe');window.location.href='formCadastro.php';</script>";
-                die();
-        
-            }else{
-                $query = "INSERT INTO usuarios (login,senha) VALUES ('$login','$senha')";
-                $insert = mysqli_query($query,$con);
-                
-                if($insert){
-                echo"<script language='javascript' type='text/javascript'>alert('Usuário cadastrado com sucesso!');window.location.href='login.html'</script>";
-                }else{
-                echo"<script language='javascript' type='text/javascript'>alert('Não foi possível cadastrar esse usuário');window.location.href='formCadastro.php'</script>";
-                }
-            }
-        }
+    $query_select = "SELECT * FROM USUARIOS WHERE email = '$email'";
+
+    $existe_email = $db->executa($query_select);
+    $existe_email = $existe_email->fetch_array();
+    // print_r($existe_email);
+    // echo count($existe_email);exit;
+    if (count($existe_email) > 0) {
+        echo '<script>alert("Este e-mail já está cadastrado em nossa base de dados!"); window.location.href = "formCadastro.php"; </script>';
+        exit;
+    }
+
+    $sql = "INSERT INTO USUARIOS (nome, email, cpf, senha) VALUES ('".$nome."', '".$email."', '".$cpf."', '".$senha."')";
+    $db->executa($sql);
+
+    session_start();
+
+    $_SESSION['usuario']['nome'] = $nome;
+    $_SESSION['usuario']['email'] = $email;
+    $_SESSION['usuario']['cpf'] = $cpf;
+
+    echo '<script>alert("Usuário cadastrado com sucesso!"); window.location.href = "index.php"; </script>';
 ?>
