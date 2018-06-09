@@ -8,12 +8,13 @@
       </button>
       <a class="navbar-brand" href="index.php">All Fashion</a>
     </div>
-    <div class="collapse navbar-collapse" id="navbar-collapse-id">
+    <div class="collapse navbar-collapse" id="navbar-collapse-id">  
       <ul class="nav navbar-nav">
-        <li><a href="sobre.php"><span class="glyphicon glyphicon-home"></span>   Sobre</a></li>
-        <li><a href="listagem.php?cat_id=-1&sub_cat_id=-1"><span class="glyphicon glyphicon-bishop"></span>     Produtos</a></li>
+        <li><a href="sobre.php"><span class="glyphicon glyphicon-home"></span>     Sobre</a></li>
+        <li><a href="listagem.php?cat_id=-1&sub_cat_id=-1"><span class="glyphicons glyphicons-t-shirt"></span>     Produtos</a></li>
         <li><a href="formLogin.php"> <span class="glyphicon glyphicon-user"></span>     Login</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-envelope"></span>     Entre em contato</a></li>
+        <li><a href="sacola.php"> <span class="glyphicon glyphicon-shopping-bag"></span>     Sacola</a></li>
       </ul>
     </div>
   </nav>

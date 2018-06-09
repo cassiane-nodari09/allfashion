@@ -50,11 +50,12 @@
 					<!-- CRIAR UM NOVO SELECT PARA CADA TAMANHO, COLOCAR NUM LAÇO WHILE -->
 
 
-					<form action="checkout.php" method="POST">
+					<form action="sacola.php?acao=add&id=<?php echo $_GET['id'];?>" method="POST">
 						<fieldset class="cores">
+
 							<legend>Cor:</legend>
 							<?php while ($row = $cor->fetch_array(MYSQLI_ASSOC)) { ?>
-								<input type="radio" name="cor" value="verde" id="verde" checked >
+								<input type="radio" name="cor" value="verde" id="verde" required>
 								<label for="<?php echo $row['cor'];?>">
 									<!-- <img src="img/produtos/foto2-verde.png" alt="verde"> -->
 								</label>
@@ -63,38 +64,38 @@
 							<!-- <input type="radio" name="cor" value="rosa" id="rosa">
 							<label for="rosa">
 							</label> -->
-
-							<input type="radio" name="cor" value="azul" id="azul">
+<!-- 
+							<input type="radio" name="cor" value="azul" id="azul"> -->
 							<!-- <label for="azul">
 							<img src="img/produtos/foto2-azul.png" alt="azul"> -->
-
+<!-- 
 							<input type="hidden" name="nome" value="Fuzzy Cardigan">
-							<input type="hidden" name="preco" value="129,00">
+							<input type="hidden" name="preco" value="129,00"> -->
 						</label>
 						</fieldset>
 						<div class="tamanho">
 							<legend>Escolha o tamanho:</legend>
 								<label class="radio-inline">
-									<input type="radio" name="optradio">32
+									<input type="radio" name="tamanho" value="32" required>32
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="optradio">36
+									<input type="radio" name="tamanho" value="36" required>36
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="optradio">38
+									<input type="radio" name="tamanho" value="38" required>38
 								</label>
-								<label class="radio-inline">
-									<input type="radio" name="optradio">40
+								<label class="radio-inline" required>
+									<input type="radio" name="tamanho" value="40" required>40
 								</label>
 								<br>
 								<label class="radio-inline">
-									<input type="radio" name="optradio">42
+									<input type="radio" name="tamanho" value="42" required>42
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="optradio">44
+									<input type="radio" name="tamanho" value="44" required>44
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="optradio">46
+									<input type="radio" name="tamanho" value="46" required>46
 								</label>
 						</div>
 
