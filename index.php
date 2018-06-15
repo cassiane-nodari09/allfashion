@@ -1,10 +1,21 @@
+
+
   <?php include("cabecalho.php");?>
   <?php include("header.php");?>
 
+  
   <div class="container destaque">
     <?php include("menu.php");?>
     <img src="img/destaque-home.png" alt="Promoção: ">
-  </div>
+    <!-- <ul id="slider">
+      <li class="sliderActive"><a href="#"><img src="img/destaque-home.png" alt=""></a></li>
+      <li><img src="img/destaque-home.png" alt=""></li>
+      <li><img src="img/destaque-home-4.png" alt=""></li>
+      <li><img src="img/destaque-home-1.png" alt=""></li>
+    </ul>
+  </div> -->
+
+
 
   <div class="container paineis">
     <section class="painel novidades painel-compacto">
@@ -29,10 +40,13 @@
         </li>
         <?php } ?>
       </ol>
-      <button type="button">Mostra mais</button>
     </section>
   </div>
   <?php include("rodape.php")?>
+  <!-- <script src="https:ajaxgoogleapis.com/aja/libs/jquery/2.1.4/jquery.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="slider.js"></script>  -->
+  <script src="js/slider.js"></script>
 </body>
 
 </html>
