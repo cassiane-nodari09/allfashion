@@ -59,18 +59,8 @@
 								<label for="<?php echo $row['cor'];?>">
 								</label>
 							<?php } ?>
+							
 
-							<!-- <input type="radio" name="cor" value="rosa" id="rosa">
-							<label for="rosa">
-							</label> -->
-<!--
-							<input type="radio" name="cor" value="azul" id="azul"> -->
-							<!-- <label for="azul">
-							<img src="img/produtos/foto2-azul.png" alt="azul"> -->
-<!--
-							<input type="hidden" name="nome" value="Fuzzy Cardigan">
-							<input type="hidden" name="preco" value="129,00"> -->
-						</label>
 						</fieldset>
 						<div class="tamanho">
 							<legend>Escolha o tamanho:</legend>
@@ -102,7 +92,9 @@
 								<legend>Escolha o tamanho:</legend>
 								<input type="range" min="36" max="46" value="42" step="2" name="tamanho" id="tamanho">
 							</fieldset> -->
-						<input type="submit" class="comprar" value="Adicionar à sacola">
+						<input type="submit" class="btn btn-success btn-lg pull-right" class="comprar" value="Adicionar à sacola">
+
+						
 					</form>
 					<div class="detalhes">
 						<h2>Detalhes do produto</h2>

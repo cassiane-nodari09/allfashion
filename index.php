@@ -6,7 +6,8 @@
   
   <div class="container destaque">
     <?php include("menu.php");?>
-    <img src="img/destaque-home.png" alt="Promoção: ">
+    <img src="img/produtos/saiaCut3.png" alt="Promoção: ">
+   
     <!-- <ul id="slider">
       <li class="sliderActive"><a href="#"><img src="img/destaque-home.png" alt=""></a></li>
       <li><img src="img/destaque-home.png" alt=""></li>
@@ -22,7 +23,7 @@
       <h2>Novidades</h2>
       <ol>
         <?php
-          $prod = $db->executa("SELECT p.* FROM produtos p LIMIT 6");
+          $prod = $db->executa("SELECT p.* FROM produtos p LIMIT 12");
           while ($row = $prod->fetch_array(MYSQLI_ASSOC)) {
             // print_r($row);
         ?>

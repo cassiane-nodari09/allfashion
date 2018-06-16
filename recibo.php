@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/recibo.css">
+<!-- <link rel="stylesheet" href="css/recibo.css"> -->
 <?php 
  include("mpdf60/mpdf.php");
 

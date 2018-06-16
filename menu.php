@@ -1,4 +1,6 @@
 <section class="menu-departamentos">
+
+
     <!-- <h2>Departamentos</h2> -->
     <?php
         $categorias = $db->executa("SELECT * FROM CATEGORIAS");
