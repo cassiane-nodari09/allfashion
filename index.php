@@ -12,8 +12,8 @@
       <li><img src="img/destaque-home.png" alt=""></li>
       <li><img src="img/destaque-home-4.png" alt=""></li>
       <li><img src="img/destaque-home-1.png" alt=""></li>
-    </ul>
-  </div> -->
+    </ul>-->
+  </div> 
 
 
 
@@ -42,6 +42,7 @@
       </ol>
     </section>
   </div>
+
   <?php include("rodape.php")?>
   <!-- <script src="https:ajaxgoogleapis.com/aja/libs/jquery/2.1.4/jquery.min.js"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

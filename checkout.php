@@ -123,7 +123,7 @@
 					</div>
 				</fieldset>
 				<div class="clear"></div>
-				<a href="efetivar.php" class="btn btn-success btn-lg pull-right" style="margin-bottom: 50px;">
+				<a href="recibo.php" class="btn btn-success btn-lg pull-right" style="margin-bottom: 50px;">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
 					Confirmar Pedido
 				</a>
@@ -133,7 +133,7 @@
 	</div>
 </div>
 
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<!-- <script src="js/bootstrap.js"></script> -->
 
 <?php include("rodape.php"); ?>
