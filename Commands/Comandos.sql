@@ -2,61 +2,11 @@
 
 /etc/init.d/apache2 start;
 
-#INSERT SAIAS
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Saia', 'Saia Social Longer', 'M', '105.90', '6', '3', '1', '')
+INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Calça Legging', 'Calça Legging Couriço', 'P', '129.90', '6', '2', '1', '6')
 
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Saia', 'Saia Couriço Short', 'M', '85.90', '5', '3', '1', '')
+INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Calça Legging', 'Calça Legging Couriço', 'P', '105.90', '6', '2', '1', '6')
 
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Saia', 'Saia Cut', 'M', '101.90', '5', '3', '1', '')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Saia', 'Saia Couriço', 'M', '109.90', '5', '3', '1', '')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Saia', 'Saia Longa', 'M', '80.00', '6', '3', '1', '')
-
-#INSERT VESTIDOS 
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Vestido', 'Vestido Curto Florido', 'M', '65.98', '1', '10', '1', '')
-
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Vestido', 'Vestido Curto Couriço', 'M', '112.90', '1', '10', '1', '')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Vestido', 'Vestido Curto Social', 'M', '145.99', '1', '10', '1', '')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Vestido', 'Vestido Longo Social', 'M', '189.90', '1', '10', '1', '')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Vestido', 'Vestido Curto Social', 'M', '98.90', '2', '10', '3', '')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Vestido', 'Vestido Longo Social', 'M', '135.78', '2', '10', '4', '')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Vestido', 'Vestido Longo', 'G', '115.49', '2', '10', '4', '')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Vestido', 'Vestido Longo Social', 'G', '225.49', '2', '10', '6', '')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Vestido', 'Vestido Curto Party', 'P', '125.49', '2', '10', '6', '')
-
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Manga longa', 'Blazer Pink', 'P', '147.78', '4', '1', '2', '2')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Manga longa', 'Camisa Xadrez AllFashion', 'P', '65.98', '4', '1', '2', '2')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Manga longa', 'Blazer AllFashion', 'P', '68,98', '4', '1', '2', '2')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Manga longa', 'Blazer Rosa Bebe', 'P', '74,47', '4', '1', '2', '2')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Manga longa', 'Camisa Manga Longa Rosa Bebe', 'P', '59.90', '4', '1', '2', '2')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Manga longa', 'Casaco de Lã Batida Xanron', 'M', '189.98', '4', '1', '1', '2')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Manga longa', 'Chochê delicado', 'M', '159.98', '3', '1', '5', '2')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Manga longa', 'Blazer Cheguei', 'M', '115.90', '2', '1', '5', '2')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Manga longa', 'Blazer AllFashion', 'P', '115.90', '2', '1', '5', '2')
-
-INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Manga longa', 'Blazer Jeans', 'M', '125.90', '4', '1', '5', '2')
-
-
-
-INSERT INTO `imagens`(` id`, `nome`, `caminho`, `Produtos_id`, `principal`) VALUES ('', '', '', '', '')
+INSERT INTO `imagens`(` id`, `nome`, `caminho`, `Produtos_id`, `principal`) VALUES ('', 'calca-preta (3).png', 'img/produtos/', '69', 'S')
 
 MARCAS 
 1

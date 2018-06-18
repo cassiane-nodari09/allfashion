@@ -6,6 +6,7 @@
 
 	<link rel="stylesheet" href="css/mobile.css" media="(max-width: 939px)">
 	<link rel="stylesheet" href="css/produto.css">
+	
 
 		<div class="container">
 			<div class="imagens-produtos">
@@ -35,7 +36,7 @@
 					?>
 
 					<!-- <a href="produto.php"><?php //echo utf8_encode($produtos['id']); ?></a> -->
-					<h1><?php echo $produto["nome"]?></h1>
+					<h1><?php echo utf8_encode($produto["descricao"])?></h1>
 					<p>Por apenas R$<?php echo number_format($produto["preco"], 2, ",", ".")?></p>
 
 					<!-- CRIAR UM NOVO SELECT PARA CADA COR, COLOCAR NUM LAÇO WHILE -->

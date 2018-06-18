@@ -45,7 +45,7 @@
                 $img_principal = $img_principal->fetch_array();
                 ?>
                 <img src="<?php echo $img_principal["caminho"].$img_principal["nome"]?>">
-                <figcaption><?php echo $row["nome"]?> por R$ <?php echo number_format($row["preco"], 2, ",", ".")?></figcaption>
+                <figcaption><?php echo utf8_encode($row["descricao"])?> por R$ <?php echo number_format($row["preco"], 2, ",", ".")?></figcaption>
               </figure>
             </a>
           </li>
