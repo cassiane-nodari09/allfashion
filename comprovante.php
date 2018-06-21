@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
 <meta name="AUTOR" content="D2th3" />
-<title>Boleto Bancário</title>
+<title>Allfashion</title>
 </head>
 
 <body>
@@ -54,11 +54,11 @@
       <td rowspan="2" align="right" valign="bottom" style="font-size: 15px; font-weight:bold; width:445px;"><span class="ld">35691.01805 01632.490007 00000.050203 4 22550000015000</span></td>
       <td rowspan="2" align="right" valign="bottom" style="width:2px;"></td>
     </tr> -->
-    <tr>
+    <!-- <tr>
       <td id="td_banco">356-5</td>
-    </tr>
+    </tr> -->
   </table>
-  <table class="tabelas" style="width:666px; border-left:solid; border-left-width:2px; border-left-color:#000000;" border="0" cellspacing="0" cellpadding="0">
+  <!-- <table class="tabelas" style="width:666px; border-left:solid; border-left-width:2px; border-left-color:#000000;" border="0" cellspacing="0" cellpadding="0">
     <tr>
       <td class="td_7_sb"> </td>
       <td style="width: 468px;"><div class="titulo">Local do Pagamento</div>
@@ -100,7 +100,7 @@
       <div class="var">5252525</div></td>
       <td class="td_2"> </td>
     </tr>
-  </table>
+  </table> -->
   <table class="tabelas" style="width:666px; border-left:solid; border-left-width:2px; border-left-color:#000000;" border="0" cellpadding="0" cellspacing="0">
     <tr>
       <td class="td_7_sb"> </td>
@@ -128,7 +128,7 @@
     <tr>
       <td rowspan="5" class="td_7_sb"> </td>
       <td rowspan="5" valign="top"><div class="titulo" style="margin-bottom:18px;">Instruções (texto de responsabilidade do Cedente)</div>
-        <div class="var">Juros/Mora ao Dia : R$ 0,35 apos 15/09/2009<br />
+        <div class="var">Juros/Mora ao Dia : R$ 0,35 apos 15/09/2018<br />
         Multa de 2,00% apos 1 dia(s) do vencimento.</div>
       </td>
       <td class="td_7_cb"> </td>

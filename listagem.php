@@ -24,7 +24,7 @@
       }
       // $sql = "SELECT * FROM produtos where CATEGORIAS_ID =".$categoria.$filtro;
       $sql = "SELECT p.*
-              FROM produtos p
+              FROM produtos p 
               WHERE 1=1 ".$filtro;
       
       // echo ($sql);
