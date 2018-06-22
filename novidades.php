@@ -12,7 +12,7 @@
                         <img src="<?php echo $img_principal['caminho'].$img_principal['nome'];?>" alt="VINIL, COURO E +">
                     </div>
                     <div class="app__home__cards__details">
-                        <h3><?php echo $row['nome'];?></h3>
+                        <h3><?php echo utf8_encode($row['nome']);?></h3>
                         <button class="btn btn-outline-primary">VEJA MAIS</button>
                     </div>
                 </a>

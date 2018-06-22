@@ -10,7 +10,7 @@
     $cpf = $_POST['cpf'];
     $senha = MD5($_POST['senha']);
     // $db = mysqli_select_db('allfashion');
-    $query_select = "SELECT * FROM USUARIOS WHERE email = '$email'";
+    $query_select = "SELECT * FROM usuarios WHERE email = '$email'";
 
     $existe_email = $db->executa($query_select);
     $existe_email = $existe_email->fetch_array();
@@ -21,7 +21,8 @@
         exit;
     }
 
-    $sql = "INSERT INTO USUARIOS (nome, email, cpf, senha) VALUES ('".$nome."', '".$email."', '".$cpf."', '".$senha."')";
+    $sql = "INSERT INTO usuarios (nome, email, cpf, senha) VALUES ('".$nome."', '".$email."', '".$cpf."', '".$senha."')";
+    // echo $sql;exit;
     $db->executa($sql);
 
     session_start();

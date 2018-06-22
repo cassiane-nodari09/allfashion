@@ -44,7 +44,7 @@ ul li {
 	display: block;
 }
 .input-busca {
-	width: 500px !important;
+	width: 225px !important;
 	float: right;
 	margin-top: 9px;
 	margin-right: 15px;
@@ -153,6 +153,7 @@ header {
     -ms-flex-pack: center;
     justify-content: center;
     width: 100%;
+    margin-bottom: 10px;
 }
 .app__menu__level1 a {
 	-webkit-box-align: center;
