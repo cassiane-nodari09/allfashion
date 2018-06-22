@@ -1,4 +1,5 @@
 <?php
+
     include_once 'config/conexao.php';
     include_once 'config/funcoes.php';
     $db = new Conexao();
@@ -13,7 +14,7 @@
     $senha = MD5($fn->removerCodigoMalicioso($senha));
 
     $query_select = "SELECT * FROM USUARIOS WHERE email = '$email' AND senha = '$senha'";
-    // echo $query_select;
+    // echo $query_select;exit;
     $login = $db->executa($query_select);
     $login = $login->fetch_array();
     // print_r($login);exit;
