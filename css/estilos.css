@@ -238,7 +238,9 @@ header {
 }
 
 
-
+.banners img {
+	width: 100%;
+}
 
 .painel {
 	/* margin: 10px 0;

@@ -6,6 +6,7 @@
 
     <?php include("menu.php");?>
 
+    <?php include("banners.php");?>
     <?php include("novidades.php");?>
 
 
