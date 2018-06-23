@@ -9,6 +9,19 @@
 	<link rel="stylesheet" href="css/mobile.css" media="(max-width: 939px)">
 	<link rel="stylesheet" href="css/produto.css">
 
+	<script>
+		// function tamSelect() {
+		// 	alert("Oi");
+		// 	// if($(".radio-inline").hasClass("select")){
+		// 	// 	console.log('removeu class');
+		// 	// 	$(".radio-inline").removeClass('select');
+		// 	// } else {
+		// 	// 	console.log('Add class');
+		// 	// 	$(".radio-inline").addClass('select');
+		// 	// }
+		// }
+	</script>
+
 
 		<div class="container">
 			<div class="imagens-produtos">
@@ -54,42 +67,41 @@
 
 
 					<form action="addSacola.php?acao=add&id=<?php echo $_GET['id'];?>" method="POST">
-						<fieldset class="cores">
+						<fieldset class="col-lg-12">
 
 							<legend>Cor:</legend>
 							<?php while ($row = $cor->fetch_array(MYSQLI_ASSOC)) { ?>
-								<input type="radio" name="cor" value="verde">
-								<label for="<?php echo $row['cor'];?>">
+								<label class="radio-inline-cor seleciona-cor <?php echo $row['cor']; ?>" data-cor="<?php echo $row['cor']; ?>">
+									<input type="radio" hidden name="cor" value="<?php echo $row['cor']; ?>">
 								</label>
 							<?php } ?>
 
-
 						</fieldset>
-						<div class="tamanho">
+						<fieldset class="col-lg-12">
 							<legend>Escolha o tamanho:</legend>
 								<label class="radio-inline">
-									<input type="radio" name="tamanho" value="32" required>32
+									<input type="radio" hidden name="tamanho" value="32" required>32
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="tamanho" value="36" required>36
+									<input type="radio" hidden name="tamanho" value="36" required>36
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="tamanho" value="38" required>38
+									<input type="radio" hidden name="tamanho" value="38" required>38
 								</label>
-								<label class="radio-inline" required>
-									<input type="radio" name="tamanho" value="40" required>40
+								<label class="radio-inline">
+									<input type="radio" hidden name="tamanho" value="40" required>40
 								</label>
 								<br>
 								<label class="radio-inline">
-									<input type="radio" name="tamanho" value="42" required>42
+									<input type="radio" hidden name="tamanho" value="42" required>42
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="tamanho" value="44" required>44
+									<input type="radio" hidden name="tamanho" value="44" required>44
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="tamanho" value="46" required>46
+									<input type="radio" hidden name="tamanho" value="46" required>46
 								</label>
-						</div>
+						</fieldset>
 
 							<!-- <fieldset class="tamanhos">
 								<legend>Escolha o tamanho:</legend>

@@ -1,0 +1,28 @@
+label.radio-inline.selected {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+    pointer-events: none;
+    padding: 10px;
+    border-radius: 60px;
+}
+
+label.radio-inline {
+    color: #000;
+    pointer-events: none;
+    padding: 10px;
+    border-radius: 60px;
+    border: .1rem solid #ccc;
+}
+
+<script>
+function tamSelect() {
+    if($(".radio-inline").hasClass("select")){
+		console.log('removeu class');
+		$(".radio-inline").removeClass('select');
+	} else {
+		console.log('Add class');
+		$(".radio-inline").addClass('select');
+	}
+}
+<script/>

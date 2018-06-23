@@ -4,10 +4,10 @@ fieldset {
 
 
 .cores label:hover:after {
-	border: 6px solid rgba(0,0,0,0.1);
+	/* border: 6px solid rgba(0,0,0,0.1); */
 }
 
-.cores label:after {
+/* .cores label:after {
 	content: '';
 	display: block;
 	border-radius: 50%;
@@ -19,24 +19,40 @@ fieldset {
 	top: 30px;
 	border: 6px solid rgba(0,0,0,0);
 	transition: 1s;
-}
+} */
 
-label[for=verde]:after {
-	left: 0;
+.verde {
+	/* left: 0; */
+	border: 3px solid #33CC66 !important;
+}
+.verde-selecionado {
 	background-color: #33CC66;
 }
 
-label[for=rosa]:after {
-	left: 60px;
+.rosa {
+	/* left: 60px; */
+	border: 3px solid #FF6666 !important;
+	/* background-color: #FF6666; */
+}
+.rosa-selecionado {
 	background-color: #FF6666;
 }
 
-label[for=azul]:after {
-	left: 120px;
+.azul {
+	/* left: 120px; */
+	/* background-color: #6666FF; */
+	border: 3px solid #6666FF !important;
+}
+.azul-selecionado {
 	background-color: #6666FF;
 }
-label[for=preto]:after {
-	left: 120px;
+
+.preto {
+	/* left: 120px; */
+	/* background-color: #000; */
+	border: 3px solid #000 !important;
+}
+.preto-selecionado {
 	background-color: #000;
 }
 
@@ -45,7 +61,7 @@ label[for=preto]:after {
 }
 
 .cores input[type=radio] {
-	display: none;
+	/* display: none; */
 }
 
 /* Esconde a camisa que nao esta selecionada*/
@@ -245,4 +261,27 @@ tr:nth-child(2n) {
 
 .tamanho {
 	/* position:relative */
+}
+
+label.radio-inline, label.radio-inline-cor {
+    color: #000;
+    /* pointer-events: none; */
+    padding: 10px;
+    border-radius: 60px;
+    border: .1rem solid #ccc;
+}
+
+label.radio-inline.selected, label.radio-inline-cor.selected {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+    pointer-events: none;
+    padding: 10px;
+    border-radius: 60px;
+}
+label.radio-inline-cor {
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin: 5px;
 }
