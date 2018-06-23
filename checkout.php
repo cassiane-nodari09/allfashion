@@ -1,5 +1,11 @@
 <?php include("cabecalho.php");?>
 <?php include("header.php");?>
+<?php
+if (!isset($_SESSION['usuario'])) {
+	// exit;
+	echo '<script>window.location.href="formLogin.php?checkout=S"</script>';
+}
+?>
 
 
 <div class="jumbotron">
@@ -13,7 +19,7 @@
 	<div class="container">
 		<!-- <div class=""> -->
 		<!-- <div class="row"> -->
-			<form class="col-lg-19">
+			<form class="col-lg-19" action="recibo.php" method="POST">
 				<fieldset class="col-md-5 bd-example">
 					<h2>Dados pessoais</h2>
 
@@ -24,13 +30,13 @@
 
 					<div class="form-group">
 						<label for="email">Email</label>
-						<input type="email" class="form-control" id="email" name="email"  value="<?php echo $_SESSION['usuario']['email']; ?>" placeholder="email@exemplo.com">
+						<input type="email" class="form-control" id="email" name="email"  value="<?php echo $_SESSION['usuario']['email']; ?>" placeholder="email@exemplo.com" required>
 
 					</div>
 
 					<div class="form-group">
 						<label for="cpf">CPF</label>
-						<input type="text" class="form-control" id="cpf" value="<?php echo $_SESSION['usuario']['cpf']; ?>"  placeholder="000.000.000-00" required>
+						<input type="text" class="form-control" id="cpf" name="cpf" value="<?php echo $_SESSION['usuario']['cpf']; ?>"  placeholder="000.000.000-00" required>
 					</div>
 				</fieldset>
 				<fieldset class="col-md-6 bd-example"  style="float: right">
@@ -44,7 +50,7 @@
 						<input type="text" class="form-control" name="nome_cartao" required>
 					</div>
 					<div class="form-group col-lg-12">
-						<label style="width: 100%">Data de Validade</label>
+						<label style="width: 100%">Mês de Validade</label>
 						<select class="form-control" name="mes_validade" required style="width: 45%; float: left;">
 							<option value="">MÊS</option>
 							<option value="01">01</option>
@@ -60,7 +66,7 @@
 							<option value="11">11</option>
 							<option value="12">12</option>
 						</select>
-						<select class="form-control" name="mes_validade" required style="width: 45%; float: left; margin-left: 10%;">
+						<select class="form-control" name="ano_validade" required style="width: 45%; float: left; margin-left: 10%;">
 							<option value="">ANO</option>
 							<option value="2018">2018</option>
 							<option value="2019">2019</option>
@@ -68,13 +74,12 @@
 					</div>
 					<div class="form-group col-lg-4" style="margin-top: 15px;">
 						<label for="nome">Código de Segurança</label>
-						<input type="text" class="form-control" name="nome_cartao" required>
+						<input type="text" class="form-control" name="codigo_seguranca" required>
 					</div>
 					<div class="clear"></div>
 					<div class="form-group col-lg-4">
 						<label for="nome">Opções de Parcelamento</label>
-
-						<select class="form-control" name="mes_validade" required>
+						<select class="form-control" name="parcelas" required>
 							<option value="1">1x</option>
 							<option value="2">2x</option>
 							<option value="3">3x</option>
@@ -100,7 +105,7 @@
 					<div class="form-group col-lg-8">
 						<label for="nome">Cidade</label>
 						<select class="form-control" name="cidade" required>
-							<option value="">Erechim</option>
+							<option value="1">Erechim</option>
 						</select>
 					</div>
 					<div class="form-group col-lg-8">
@@ -113,9 +118,7 @@
 					</div>
 					<div class="form-group col-lg-6">
 						<label for="nome">Bairro</label>
-						<select class="form-control" name="bairro" required>
-							<option value="">Fátima</option>
-						</select>
+						<input type="text" class="form-control" name="bairro" required>
 					</div>
 					<div class="form-group col-lg-6">
 						<label for="nome">Complemento</label>
@@ -123,10 +126,10 @@
 					</div>
 				</fieldset>
 				<div class="clear"></div>
-				<a href="recibo.php" class="btn btn-success btn-lg pull-right" style="margin-bottom: 50px;">
+				<button type="submit" class="btn btn-success btn-lg pull-right" style="margin-bottom: 50px;">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
 					Confirmar Pedido
-				</a>
+				</button>
 				<div class="clear"></div>
 			</form>
 		<!-- </div> -->

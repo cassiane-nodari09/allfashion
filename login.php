@@ -23,7 +23,11 @@
         $_SESSION['usuario']['nome'] = $login['nome'];
         $_SESSION['usuario']['email'] = $login['email'];
         $_SESSION['usuario']['cpf'] = $login['cpf'];
-        echo '<script>window.location.href = "index.php"; </script>';
+        if (isset($_GET['checkout'])) {
+            echo '<script>window.location.href = "checkout.php"; </script>';
+        } else {
+            echo '<script>window.location.href = "index.php"; </script>';
+        }
     } else {
         echo '<script>alert("Nenhum usuário encontrado em nossa base de dados!"); window.location.href = "formLogin.php"; </script>';
         exit;

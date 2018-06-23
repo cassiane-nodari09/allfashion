@@ -30,6 +30,9 @@
     $_SESSION['usuario']['nome'] = $nome;
     $_SESSION['usuario']['email'] = $email;
     $_SESSION['usuario']['cpf'] = $cpf;
-
-    echo '<script>alert("Usuário cadastrado com sucesso!"); window.location.href = "index.php"; </script>';
+    if (isset($_GET['checkout'])) {
+        echo '<script>alert("Usuário cadastrado com sucesso!"); window.location.href = "checkout.php"; </script>';
+    } else {
+        echo '<script>alert("Usuário cadastrado com sucesso!"); window.location.href = "index.php"; </script>';
+    }
 ?>

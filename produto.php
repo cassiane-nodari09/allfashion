@@ -66,7 +66,7 @@
 					<!-- CRIAR UM NOVO SELECT PARA CADA TAMANHO, COLOCAR NUM LAÇO WHILE -->
 
 
-					<form action="addSacola.php?acao=add&id=<?php echo $_GET['id'];?>" method="POST">
+					<form action="addSacola.php?acao=add&id=<?php echo $_GET['id'];?>" method="POST" id="form-produto">
 						<fieldset class="col-lg-12">
 
 							<legend>Cor:</legend>
@@ -80,44 +80,38 @@
 						<fieldset class="col-lg-12">
 							<legend>Escolha o tamanho:</legend>
 								<label class="radio-inline">
-									<input type="radio" hidden name="tamanho" value="32" required>32
+									<input type="radio" hidden name="tamanho" value="32">32
 								</label>
 								<label class="radio-inline">
-									<input type="radio" hidden name="tamanho" value="36" required>36
+									<input type="radio" hidden name="tamanho" value="36">36
 								</label>
 								<label class="radio-inline">
-									<input type="radio" hidden name="tamanho" value="38" required>38
+									<input type="radio" hidden name="tamanho" value="38">38
 								</label>
 								<label class="radio-inline">
-									<input type="radio" hidden name="tamanho" value="40" required>40
+									<input type="radio" hidden name="tamanho" value="40">40
 								</label>
-								<br>
+								<!-- <br> -->
 								<label class="radio-inline">
-									<input type="radio" hidden name="tamanho" value="42" required>42
-								</label>
-								<label class="radio-inline">
-									<input type="radio" hidden name="tamanho" value="44" required>44
+									<input type="radio" hidden name="tamanho" value="42">42
 								</label>
 								<label class="radio-inline">
-									<input type="radio" hidden name="tamanho" value="46" required>46
+									<input type="radio" hidden name="tamanho" value="44">44
+								</label>
+								<label class="radio-inline">
+									<input type="radio" hidden name="tamanho" value="46">46
 								</label>
 						</fieldset>
 
-							<!-- <fieldset class="tamanhos">
-								<legend>Escolha o tamanho:</legend>
-								<input type="range" min="36" max="46" value="42" step="2" name="tamanho" id="tamanho">
-							</fieldset> -->
-						<input type="submit" class="btn btn-success btn-lg pull-right" class="comprar" value="Adicionar à sacola">
-
-
+						<div class="detalhes">
+							<h2>Detalhes do produto</h2>
+							<p>Esse é o melhor casaco de Cardigã que você já viu. Excelente
+								material italiano com estampa desenhada pelos artesãos da
+								comunidade de Krotor nas ilhas gregas. Compre já e receba hoje
+								mesmo pela nossa entrega a jato.</p>
+						</div>
+						<input type="button" onclick="validaForm()" class="btn btn-success btn-lg" class="comprar" value="Adicionar à sacola" style="margin-bottom: 10px;">
 					</form>
-					<div class="detalhes">
-						<h2>Detalhes do produto</h2>
-						<p>Esse é o melhor casaco de Cardigã que você já viu. Excelente
-						material italiano com estampa desenhada pelos artesãos da
-						comunidade de Krotor nas ilhas gregas. Compre já e receba hoje
-						mesmo pela nossa entrega a jato.</p>
-					</div>
 				</div>
 			</div>
 			<div class="clear"></div>

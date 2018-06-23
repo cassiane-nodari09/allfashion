@@ -3,7 +3,7 @@
 <div class="container">
     <div class="col-lg-3"></div>
     <div class="col-lg-6" style="margin-bottom: 100px">
-        <form method="POST" action="cadastro.php">
+        <form method="POST" action="cadastro.php<?php echo (isset($_GET['checkout'])) ? '?checkout=S':''; ?>">
             <fieldset>
                 <div class="text-center"></div>
 
