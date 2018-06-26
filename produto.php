@@ -9,20 +9,6 @@
 	<link rel="stylesheet" href="css/mobile.css" media="(max-width: 939px)">
 	<link rel="stylesheet" href="css/produto.css">
 
-	<script>
-		// function tamSelect() {
-		// 	alert("Oi");
-		// 	// if($(".radio-inline").hasClass("select")){
-		// 	// 	console.log('removeu class');
-		// 	// 	$(".radio-inline").removeClass('select');
-		// 	// } else {
-		// 	// 	console.log('Add class');
-		// 	// 	$(".radio-inline").addClass('select');
-		// 	// }
-		// }
-	</script>
-
-
 		<div class="container">
 			<div class="imagens-produtos">
 				<?php
@@ -75,8 +61,8 @@
 									<input type="radio" hidden name="cor" value="<?php echo $row['cor']; ?>">
 								</label>
 							<?php } ?>
-
 						</fieldset>
+
 						<fieldset class="col-lg-12">
 							<legend>Escolha o tamanho:</legend>
 								<label class="radio-inline">
@@ -91,7 +77,6 @@
 								<label class="radio-inline">
 									<input type="radio" hidden name="tamanho" value="40">40
 								</label>
-								<!-- <br> -->
 								<label class="radio-inline">
 									<input type="radio" hidden name="tamanho" value="42">42
 								</label>
@@ -101,6 +86,17 @@
 								<label class="radio-inline">
 									<input type="radio" hidden name="tamanho" value="46">46
 								</label>
+								<br/>
+								<label class="radio-inline">
+									<input type="radio" hidden name="tamanho" value="P">P
+								</label>
+								<label class="radio-inline">
+									<input type="radio" hidden name="tamanho" value="M">M
+								</label>
+								<label class="radio-inline">
+									<input type="radio" hidden name="tamanho" value="G">G
+								</label>
+
 						</fieldset>
 
 						<div class="detalhes">
