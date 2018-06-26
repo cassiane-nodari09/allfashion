@@ -166,7 +166,6 @@
       <td class="td_7_sb"> </td>
       <td valign="top"><div class="titulo">Sacado</div>
         <div class="var" style="margin-bottom:5px; height:auto"><?php echo $_SESSION['usuario']['nome']; ?><br />
-            <?php print_r($_SESSION); ?>
         Rua do Sacado, Número / Complemento<br />
         Cidade/UF - CEP: 36000-000</div>
         <div class="titulo">Sacador / Avalista</div></td>

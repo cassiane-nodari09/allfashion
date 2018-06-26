@@ -30,7 +30,6 @@
         <form>
             <input type="search" class="form-control input-busca" placeholder="Busque pelo site">
         </form>
-
     </div>
 </nav>
 <header class="container">

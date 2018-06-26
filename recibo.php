@@ -1,7 +1,7 @@
 <?php
 
-$dados = $_POST;
-print_r($dados);exit;
+// $dados = $_POST;
+// print_r($dados);exit;
 
 // Inserir pedido no banco de dados
 
