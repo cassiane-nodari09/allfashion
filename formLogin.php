@@ -21,7 +21,7 @@
             <h3>Criar conta</h3>
             <form method="POST" action="formCadastro.php<?php echo (isset($_GET['checkout'])) ? '?checkout=S':''; ?>">
                 <label for="login">E-mail</label>
-                <input type="email" class="form-control" placeholder="informe seu E-mail" required name="email" /><br>
+                <input type="email" class="form-control" placeholder="Informe seu E-mail" required name="email" /><br>
                 <button type="submit" class="btn btn-success btn-lg pull-right">Continuar</button>
             </form>
         </div>

@@ -11,7 +11,6 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-id">
         <ul class="nav navbar-nav">
-            <li><a href="sobre.php"><span class="glyphicon glyphicon-home"></span>     Sobre</a></li>
             <li><a href="listagem.php?cat_id=-1&sub_cat_id=-1"><span class="glyphicon glyphicon-folder-close"></span>     Produtos</a></li>
 
             <li><a href="#"><span class="glyphicon glyphicon-envelope"></span>     Entre em contato</a></li>
