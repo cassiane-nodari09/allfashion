@@ -99,6 +99,7 @@
 
 						</fieldset>
 
+						<input type="button" onclick="validaForm()" class="btn btn-success btn-lg" class="comprar" value="Adicionar à sacola" style="margin-bottom: 10px; float: right;">
 						<div class="detalhes">
 							<h2>Detalhes do produto</h2>
 							<p>Esse é o melhor casaco de Cardigã que você já viu. Excelente
@@ -106,7 +107,6 @@
 								comunidade de Krotor nas ilhas gregas. Compre já e receba hoje
 								mesmo pela nossa entrega a jato.</p>
 						</div>
-						<input type="button" onclick="validaForm()" class="btn btn-success btn-lg" class="comprar" value="Adicionar à sacola" style="margin-bottom: 10px;">
 					</form>
 				</div>
 			</div>

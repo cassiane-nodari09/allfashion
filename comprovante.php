@@ -1,188 +1,73 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" href="css/pdf.css">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
-<meta name="AUTOR" content="D2th3" />
-<title>Allfashion</title>
-</head>
+<?php include("cabecalho.php");?>
+<?php include("header.php");?>
+<?php include("checkout.php");?>
 
-<body>
-<?php session_start(); //print_r($_SESSION); ?>
-<!-- <div id="boleto_parceiro"> -->
-  <!-- <table style="width:666px; height:28px; border-bottom:solid; border-bottom-color:#000000; border-bottom-width:2px; border-top:solid; border-top-color:#000000; border-top-width:2px; margin-bottom: 5px;" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td class="td_7_sb"> </td>
-    <td><div class="titulo">Nosso Número</div>
-      <div class="var">5252525</div></td>
-    <td class="td_7_cb"> </td>
-    <td><div class="titulo">Espécie.</div>
-      <div class="var">R$</div></td>
-    <td class="td_7_cb"> </td>
-    <td><div class="titulo">Quantidade</div>
-      <div class="var"> </div></td>
-    <td class="td_7_cb"> </td>
-    <td><div class="titulo">Valor Documento</div>
-      <div class="var">220,00</div></td>
-    <td class="td_7_cb"> </td>
-    <td><div class="titulo">Espécie Doc.</div>
-      <div class="var">DS</div></td>
-    <td class="td_7_cb"> </td>
-    <td><div class="titulo">Agência / Código Cedente</div>
-      <div class="var" style="text-align:right">5252/5525252-1</div></td>
-    <td class="td_2"> </td>
-  </tr>
-</table> -->
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> -->
+  <link rel="stylesheet" href="css/pdf.css">
+  <head>
+ 
+  <title>Allfashion</title>
+  </head>
 
-  <!-- <table width="100%" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="td_7_sb"> </td>
-      <td><div class="titulo">Sacador / Avalista</div>
-      <div class="var"> </div></td>
-      <td class="td_7_sb"> </td>
-      <td valign="top" style="width:320px;"><div class="am">Autenticação Mecânica</div></td>
-      <td class="td_2"> </td>
-    </tr>
-  </table> -->
-<!-- </div> -->
-<div id="boleto">
-  <table border="0" cellpadding="0" cellspacing="0" id="tb_logo">
-    <!-- <tr>
-      <td rowspan="2" valign="bottom" style="width:150px;"><img src="../imagens/logoreal.jpg" alt="Banco Real" width="150" height="40" title="Banco Real" /></td>
-      <td align="center" valign="bottom" style="font-size: 9px; border:none;">Banco</td>
-      <td rowspan="2" align="right" valign="bottom" style="width:6px;"></td>
-      <td rowspan="2" align="right" valign="bottom" style="font-size: 15px; font-weight:bold; width:445px;"><span class="ld">35691.01805 01632.490007 00000.050203 4 22550000015000</span></td>
-      <td rowspan="2" align="right" valign="bottom" style="width:2px;"></td>
-    </tr> -->
-    <!-- <tr>
-      <td id="td_banco">356-5</td>
-    </tr> -->
-  </table>
-  <!-- <table class="tabelas" style="width:666px; border-left:solid; border-left-width:2px; border-left-color:#000000;" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="td_7_sb"> </td>
-      <td style="width: 468px;"><div class="titulo">Local do Pagamento</div>
-      <div class="var">Pagável em qualquer banco até a data de vencimento</div></td>
-      <td class="td_7_cb"> </td>
-      <td class="direito"><div class="titulo">Vencimento</div>
-        <div class="var">10/08/2009</div></td>
-      <td class="td_2"> </td>
-    </tr>
-    <tr>
-      <td class="td_7_sb"> </td>
-      <td><div class="titulo">Cedente</div>
-      <div class="var">Empresa S/A</div></td>
-      <td class="td_7_cb"> </td>
-      <td class="direito"><div class="titulo">Agência / Código do Cedente</div>
-      <div class="var">5252/5525252-1</div></td>
-      <td> </td>
-    </tr>
-  </table>
-  <table class="tabelas" style="width:666px; border-left:solid; border-left-width:2px; border-left-color:#000000;" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="td_7_sb"> </td>
-      <td style="width:103px;"><div class="titulo">Data  Documento</div>
-        <div class="var">31/07/2009</div></td>
-      <td class="td_7_cb"> </td>
-      <td style="width:133px;"><div class="titulo">Número Documento</div>
-      <div class="var">1717</div></td>
-      <td class="td_7_cb"> </td>
-      <td style="width:62px;"><div class="titulo">Espécie Doc.</div>
-      <div class="var">DS</div></td>
-      <td class="td_7_cb"> </td>
-      <td style="width:34px;"><div class="titulo">Aceite</div>
-      <div class="var">S</div></td>
-      <td class="td_7_cb"> </td>
-      <td style="width:103px;"><div class="titulo">Data Processamento</div>
-      <div class="var">10/08/2009</div></td>
-      <td class="td_7_cb"> </td>
-      <td class="direito"><div class="titulo">Nosso Número</div>
-      <div class="var">5252525</div></td>
-      <td class="td_2"> </td>
-    </tr>
-  </table> -->
-  <table class="tabelas" style="width:666px; border-left:solid; border-left-width:2px; border-left-color:#000000;" border="0" cellpadding="0" cellspacing="0">
-    <tr>
-      <td class="td_7_sb"> </td>
-      <td style="width:118px;"><div class="titulo">Uso Banco</div>
-      <div class="var"> </div></td>
-      <td class="td_7_cb"> </td>
-      <td style="width:55px;"><div class="titulo">Carteira</div>
-      <div class="var">20</div></td>
-      <td class="td_7_cb"> </td>
-      <td style="width:55px;"><div class="titulo">Espécie</div>
-      <div class="var">R$</div></td>
-      <td class="td_7_cb"> </td>
-      <td style="width:104px;"><div class="titulo">Quantidade</div>
-      <div class="var"> </div></td>
-      <td class="td_7_cb"> </td>
-      <td style="width:103px;"><div class="titulo">Valor</div>
-      <div class="var"> </div></td>
-      <td class="td_7_cb"> </td>
-      <td class="direito"><div class="titulo">Valor do Documento</div>
-      <div class="var">220,00</div></td>
-      <td class="td_2"> </td>
-    </tr>
-  </table>
-  <table class="tabelas" style="width:666px; border-left:solid; border-left-width:2px; border-left-color:#000000;" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td rowspan="5" class="td_7_sb"> </td>
-      <td rowspan="5" valign="top"><div class="titulo" style="margin-bottom:18px;">Instruções (texto de responsabilidade do Cedente)</div>
-        <div class="var">Juros/Mora ao Dia : R$ 0,35 apos 15/09/2018<br />
-        Multa de 2,00% apos 1 dia(s) do vencimento.</div>
-      </td>
-      <td class="td_7_cb"> </td>
-      <td class="direito"><div class="titulo">(-) Desconto / Abatimento</div>
-      <div class="var"> </div></td>
-      <td class="td_2"> </td>
-    </tr>
-    <tr>
-      <td class="td_7_cb"> </td>
-      <td class="direito"><div class="titulo">(-) Outras Deduções</div>
-      <div class="var"> </div></td>
-      <td class="td_2"> </td>
-    </tr>
-    <tr>
-      <td class="td_7_cb"> </td>
-      <td class="direito"><div class="titulo">(+) Multa / Mora</div>
-      <div class="var"> </div></td>
-      <td class="td_2"> </td>
-    </tr>
-    <tr>
-      <td class="td_7_cb"> </td>
-      <td class="direito"><div class="titulo">(+) Outros Acréscimos</div>
-      <div class="var"> </div></td>
-      <td class="td_2"> </td>
-    </tr>
-    <tr>
-      <td class="td_7_cb"> </td>
-      <td class="direito"><div class="titulo">(=) Valor Cobrado</div>
-      <div class="var"> </div></td>
-      <td class="td_2"> </td>
-    </tr>
-  </table>
-  <table class="tabelas" style="width:666px; height:65px; border-left:solid; border-left-width:2px; border-left-color:#000000;" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="td_7_sb"> </td>
-      <td valign="top"><div class="titulo">Sacado</div>
-        <div class="var" style="margin-bottom:5px; height:auto"><?php echo $_SESSION['usuario']['nome']; ?><br />
-        Rua do Sacado, Número / Complemento<br />
-        Cidade/UF - CEP: 36000-000</div>
-        <div class="titulo">Sacador / Avalista</div></td>
-      <td class="td_7_sb"> </td>
-      <td class="direito" valign="top"><div class="titulo">CPF / CNPJ</div>
-        <div class="var" style="text-align:left;"><?php echo $_SESSION['usuario']['cpf']; ?> </div></td>
-      <td class="td_2"> </td>
-    </tr>
-  </table>
-  <table style="width:666px; border-top:solid; border-top-width:2px; border-top-color:#000000" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="td_7_sb"> </td>
-      <td class="td_7_sb"> </td>
-      <td valign="top"><div class="titulo" style="text-align:left;">Autenticaçao Mecânica / FICHA DE COMPENSAÇAO</div></td>
-      <td class="td_2"> </td>
-    </tr>
-  </table>
-</div>
-</body>
-</html>
+  <body>
+  <div style="font-size: 12px; font-family: Arial, serif, EmojiFont; margin: 0px;">
+    <div class="x_container" style="width:586px; margin:0 auto">
+      <table cellpadding="0" cellspacing="0" class="x_one x_col" width="100%" bgcolor="#FFFFFF" style="background:#FFFFFF">
+        <tbody>
+          <tr>
+            <td>
+              <table cellpadding="0" cellspacing="0" width="85%" bgcolor="#FFF" style="background:#FFF; color:#000; font-family:'Oswald','Roboto',sans-serif; font-size:16px">
+                <tbody>
+                  <tr>
+                    <td>
+                      <span style="font-size:26px; text-transform:uppercase; color:#000;"><strong>Pedido de Compra</strong></span><br>
+                      <span style="font-size:40px; text-transform:uppercase"><?php echo $_SESSION['usuario']['nome']; ?></span> 
+                      <p style="font-family:Roboto-Regular,Verdana,Arial,sans-serif; font-size:0.85rem">
+                      O seu pagamento no total de <?php echo $_SESSION['usuario']['nome']; ?> já&nbsp;foi&nbsp;recebido!</p>
+                      <p style="font-family:Roboto-Regular,Verdana,Arial,sans-serif; font-size:0.85rem">
+                        Nós do Tri Bagual estamos agradecidos por ter nos escolhidos!
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table cellpadding="0" cellspacing="0" class="x_gap" width="100%" style="border-bottom:1px solid #000">
+                <tbody>
+                  <tr>
+                    <td height="30" style="font-family:sans-serif; font-size:1px; line-height:1px"><span>&nbsp;</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table cellpadding="0" cellspacing="0" width="85%" bgcolor="#FFF" style="background:#FFF; color:#000; font-family:'Oswald','Roboto',sans-serif; font-size:16px">
+                <tbody>
+                  <tr>
+                    <td>
+                        <table cellpadding="0" cellspacing="0" class="x_gap" width="100%">
+                          <tbody>
+                            <tr>
+                              <td height="15" style="font-family:sans-serif; font-size:1px; line-height:1px"><span>&nbsp;</span></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      <a target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:#000">
+                        <p style="font-family:Roboto-Regular,Verdana,Arial,sans-serif; font-size:0.80rem; letter-spacing:-0.02rem">
+                        <strong>Obrigado pela preferência!</strong></p>
+                      </a>
+                      <table cellpadding="0" cellspacing="0" class="x_gap" width="100%">
+                        <tbody>
+                          <tr>
+                            <td height="18" style="font-family:sans-serif; font-size:1px; line-height:1px"><span>&nbsp;</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

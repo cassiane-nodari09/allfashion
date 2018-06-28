@@ -39,19 +39,20 @@ if (!isset($_SESSION['usuario'])) {
 						<input type="text" class="form-control" id="cpf" name="cpf" value="<?php echo $_SESSION['usuario']['cpf']; ?>"  placeholder="000.000.000-00" required>
 					</div>
 				</fieldset>
+
 				<fieldset class="col-md-6 bd-example"  style="float: right">
 					<h2>Dados de Pagamento</h2>
 					<div class="form-group col-lg-12">
 						<label for="nome">Número do Cartão</label>
-						<input type="text" class="form-control" name="cartao" required>
+						<input type="text" class="form-control" name="cartao">
 					</div>
 					<div class="form-group col-lg-12">
 						<label for="nome">Nome do titular (como está gravado no Cartão)</label>
-						<input type="text" class="form-control" name="nome_cartao" required>
+						<input type="text" class="form-control" name="nome_cartao">
 					</div>
 					<div class="form-group col-lg-12">
 						<label style="width: 100%">Mês de Validade</label>
-						<select class="form-control" name="mes_validade" required style="width: 45%; float: left;">
+						<select class="form-control" name="mes_validade" style="width: 45%; float: left;">
 							<option value="">MÊS</option>
 							<option value="01">01</option>
 							<option value="02">02</option>
@@ -66,7 +67,7 @@ if (!isset($_SESSION['usuario'])) {
 							<option value="11">11</option>
 							<option value="12">12</option>
 						</select>
-						<select class="form-control" name="ano_validade" required style="width: 45%; float: left; margin-left: 10%;">
+						<select class="form-control" name="ano_validade" style="width: 45%; float: left; margin-left: 10%;">
 							<option value="">ANO</option>
 							<option value="2018">2018</option>
 							<option value="2019">2019</option>
@@ -74,12 +75,12 @@ if (!isset($_SESSION['usuario'])) {
 					</div>
 					<div class="form-group col-lg-4" style="margin-top: 15px;">
 						<label for="nome">Código de Segurança</label>
-						<input type="text" class="form-control" name="codigo_seguranca" required>
+						<input type="text" class="form-control" name="codigo_seguranca">
 					</div>
 					<div class="clear"></div>
-					<div class="form-group col-lg-4">
+					<div class="form-group col-lg-3">
 						<label for="nome">Opções de Parcelamento</label>
-						<select class="form-control" name="parcelas" required>
+						<select class="form-control" name="parcelas">
 							<option value="1">1x</option>
 							<option value="2">2x</option>
 							<option value="3">3x</option>
@@ -89,6 +90,7 @@ if (!isset($_SESSION['usuario'])) {
 						</select>
 					</div>
 				</fieldset>
+
 				<fieldset class="col-md-5 bd-example" style="margin-top: 25px;">
 					<h2>Endereço de Entrega</h2>
 					<div class="form-group col-lg-4">
@@ -126,9 +128,9 @@ if (!isset($_SESSION['usuario'])) {
 					</div>
 				</fieldset>
 				<div class="clear"></div>
-				<button type="submit" class="btn btn-success btn-lg pull-right" style="margin-bottom: 50px;">
+				<button type="submit" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 50px;">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
-					Confirmar Pedido
+					Gerar Boleto
 				</button>
 				<div class="clear"></div>
 			</form>

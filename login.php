@@ -22,7 +22,6 @@
         $_SESSION['usuario']['id'] = $login['id'];
         $_SESSION['usuario']['nome'] = $login['nome'];
         $_SESSION['usuario']['email'] = $login['email'];
-        $_SESSION['usuario']['cpf'] = $login['cpf'];
         if (isset($_GET['checkout'])) {
             echo '<script>window.location.href = "checkout.php"; </script>';
         } else {
