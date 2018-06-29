@@ -1,11 +1,5 @@
 <?php
 
-// $dados = $_POST;
-// print_r($dados);exit;
-
-// Inserir pedido no banco de dados
-
-
 // Gerar recibo
 require_once 'vendor/autoload.php';
 

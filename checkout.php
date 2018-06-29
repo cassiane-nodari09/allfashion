@@ -19,26 +19,26 @@ if (!isset($_SESSION['usuario'])) {
 	<div class="container">
 		<!-- <div class=""> -->
 		<!-- <div class="row"> -->
-			<form class="col-lg-19" action="recibo.php" method="POST">
-				<fieldset class="col-md-5 bd-example">
+			<form class="col-lg-19" action="add_pedido.php" method="POST">
+				<!-- <fieldset class="col-md-5 bd-example">
 					<h2>Dados pessoais</h2>
 
 					<div class="form-group">
 						<label for="nome">Nome completo</label>
-						<input type="text" class="form-control" id="nome" name="nome"  value="<?php echo $_SESSION['usuario']['nome']; ?>" autofocus required>
+						<input type="text" class="form-control" id="nome" name="nome"  value="<?php // echo $_SESSION['usuario']['nome']; ?>" autofocus required>
 					</div>
 
 					<div class="form-group">
 						<label for="email">Email</label>
-						<input type="email" class="form-control" id="email" name="email"  value="<?php echo $_SESSION['usuario']['email']; ?>" placeholder="email@exemplo.com" required>
+						<input type="email" class="form-control" id="email" name="email"  value="<?php // echo $_SESSION['usuario']['email']; ?>" placeholder="email@exemplo.com" required>
 
 					</div>
 
 					<div class="form-group">
 						<label for="cpf">CPF</label>
-						<input type="text" class="form-control" id="cpf" name="cpf" value="<?php echo $_SESSION['usuario']['cpf']; ?>"  placeholder="000.000.000-00" required>
+						<input type="text" class="form-control" id="cpf" name="cpf" value="<?php // echo $_SESSION['usuario']['cpf']; ?>"  placeholder="000.000.000-00" required>
 					</div>
-				</fieldset>
+				</fieldset> -->
 
 				<fieldset class="col-md-6 bd-example"  style="float: right">
 					<h2>Dados de Pagamento</h2>
@@ -91,7 +91,7 @@ if (!isset($_SESSION['usuario'])) {
 					</div>
 				</fieldset>
 
-				<fieldset class="col-md-5 bd-example" style="margin-top: 25px;">
+				<fieldset class="col-md-5 bd-example">
 					<h2>Endereço de Entrega</h2>
 					<div class="form-group col-lg-4">
 						<label for="nome">CEP</label>
@@ -130,7 +130,7 @@ if (!isset($_SESSION['usuario'])) {
 				<div class="clear"></div>
 				<button type="submit" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 50px;">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
-					Gerar Boleto
+					Confirmar Pedido
 				</button>
 				<div class="clear"></div>
 			</form>

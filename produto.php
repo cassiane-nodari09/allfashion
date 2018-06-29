@@ -44,7 +44,7 @@
 					<?php
 						$id = $_GET['id'];
 						// $descricao = $_GET['descricao'];
-						$cor = $db->executa("SELECT * FROM CORES");
+						$cor = $db->executa("SELECT * FROM cores");
 						// $cor = $cor->fetch_array();
 						// print_r($cor);
 					?>

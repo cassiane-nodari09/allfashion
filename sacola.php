@@ -23,7 +23,7 @@
             <?php
             $tot = 0;
             foreach($_SESSION['itens'] as $IdProduto => $value){
-                $produto = $db->executa("SELECT * FROM PRODUTOS p WHERE ID = ".$value['id']);
+                $produto = $db->executa("SELECT * FROM produtos p WHERE ID = ".$value['id']);
                 $produto = $produto->fetch_array();
                 $total = ($produto['preco'] * $value['quantidade']);
                 $tot += $total;
