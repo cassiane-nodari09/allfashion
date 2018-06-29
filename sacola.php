@@ -13,7 +13,7 @@
                 <th scope="col">Cor</th>
                 <th scope="col">Preço</th>
                 <th scope="col">Quantidade</th>
-                <th scope="col">Total</th>
+                <th scope="col">Valor Total</th>
                 <th scope="col">Ação</th>
 
             </tr>

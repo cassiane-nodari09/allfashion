@@ -1,28 +1,81 @@
-label.radio-inline.selected {
-    background-color: #000;
-    border-color: #000;
-    color: #fff;
-    pointer-events: none;
-    padding: 10px;
-    border-radius: 60px;
-}
+Nome: Casaco de Lã Batida Alongado
 
-label.radio-inline {
-    color: #000;
-    pointer-events: none;
-    padding: 10px;
-    border-radius: 60px;
-    border: .1rem solid #ccc;
-}
+Descrição: Casaco feminino confeccionado em lã batida com modelagem levemente acinturada, possui gola virada, forro por toda a peça, fechamento com botões na parte frontal e dois bolsos com zíper aparente. Possui também detalhe com botões nas costas e na parte superior. 100% Poliéster
 
-<script>
-function tamSelect() {
-    if($(".radio-inline").hasClass("select")){
-		console.log('removeu class');
-		$(".radio-inline").removeClass('select');
-	} else {
-		console.log('Add class');
-		$(".radio-inline").addClass('select');
-	}
-}
-<script/>
+ 
+
+Composição: 
+
+
+INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', 'Jaqueta Jeans Oversized','Jaqueta jeans feminina Oversized, dois bolsos na parte da frente com fechamento em botões na parte frontal. Uma Jaqueta over maravilhosa para você arrasar nos suas produções.','M', '15.98','1', '1', '4', '')
+
+
+INSERT INTO `imagens`(` id`, `nome`, `caminho`, `Produtos_id`, `principal`) VALUES ('', 'manga-longa -azul (3).png', 'img/produtos/manga longa', '71', 'S')
+
+
+INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', '','' , '', '','' , '', '')
+
+
+INSERT INTO `imagens`(` id`, `nome`, `caminho`, `Produtos_id`, `principal`) VALUES ('', '', '', '', '')
+
+
+
+INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', '','' , '', '','' , '', '')
+
+
+INSERT INTO `imagens`(` id`, `nome`, `caminho`, `Produtos_id`, `principal`) VALUES ('', '', '', '', '')
+
+
+
+INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', '','' , '', '','' , '', '')
+
+
+INSERT INTO `imagens`(` id`, `nome`, `caminho`, `Produtos_id`, `principal`) VALUES ('', '', '', '', '')
+
+
+
+INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', '','' , '', '','' , '', '')
+
+
+INSERT INTO `imagens`(` id`, `nome`, `caminho`, `Produtos_id`, `principal`) VALUES ('', '', '', '', '')
+
+
+
+INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', '','' , '', '','' , '', '')
+
+
+INSERT INTO `imagens`(` id`, `nome`, `caminho`, `Produtos_id`, `principal`) VALUES ('', '', '', '', '')
+
+
+
+INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', '','' , '', '','' , '', '')
+
+
+INSERT INTO `imagens`(` id`, `nome`, `caminho`, `Produtos_id`, `principal`) VALUES ('', '', '', '', '')
+
+
+
+INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', '','' , '', '','' , '', '')
+
+
+INSERT INTO `imagens`(` id`, `nome`, `caminho`, `Produtos_id`, `principal`) VALUES ('', '', '', '', '')
+
+
+
+INSERT INTO `produtos`(`id`, `nome`, `descricao`, `tamanho`, `preco`, `Marcas_id`, `Categorias_id`, `Cores_id`, `SubCategorias_id`) VALUES ('', '','' , '', '','' , '', '')
+
+
+INSERT INTO `imagens`(` id`, `nome`, `caminho`, `Produtos_id`, `principal`) VALUES ('', '', '', '', '')
+
+
+
+
+
+
+
+
+INSERT INTO `imagens`(` id`, `nome`, `caminho`, `Produtos_id`, `principal`) VALUES ('', '1.1.PNG', 'img/produtos/manga longa/', '70', 'S')
+
+
+
+71

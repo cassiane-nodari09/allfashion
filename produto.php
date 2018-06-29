@@ -37,7 +37,7 @@
 					?>
 
 					<!-- <a href="produto.php"><?php //echo utf8_encode($produtos['id']); ?></a> -->
-					<h1><?php echo utf8_encode($produto["descricao"])?></h1>
+					<h1><?php echo utf8_encode($produto["nome"])?></h1>
 					<p>Por apenas R$<?php echo number_format($produto["preco"], 2, ",", ".")?></p>
 
 					<!-- CRIAR UM NOVO SELECT PARA CADA COR, COLOCAR NUM LAÇO WHILE -->
@@ -100,13 +100,8 @@
 						</fieldset>
 
 						<input type="button" onclick="validaForm()" class="btn btn-success btn-lg" class="comprar" value="Adicionar à sacola" style="margin-bottom: 10px; float: right;">
-						<div class="detalhes">
-							<h2>Detalhes do produto</h2>
-							<p>Esse é o melhor casaco de Cardigã que você já viu. Excelente
-								material italiano com estampa desenhada pelos artesãos da
-								comunidade de Krotor nas ilhas gregas. Compre já e receba hoje
-								mesmo pela nossa entrega a jato.</p>
-						</div>
+						<h2>Detalhes do produto</h2>
+						<h3 class="descri"><?php echo utf8_encode($produto["descricao"])?></h3>
 					</form>
 				</div>
 			</div>

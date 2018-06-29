@@ -291,3 +291,10 @@ label.radio-inline-cor {
 	float: left;
 	margin: 5px;
 }
+
+h3.descri {
+	font-size: 1.2em;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	text-align: justify;
+	padding-bottom: 80px;
+}

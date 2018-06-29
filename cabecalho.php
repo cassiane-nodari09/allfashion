@@ -3,7 +3,6 @@
 <head>
     <title>All Fashion</title>
     <meta charset="utf-8">
-    <!-- <link rel="stylesheet" href="css/reset.css"> -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/mobile.css" media="(max-width: 939px)">
@@ -16,3 +15,4 @@
         include_once 'config/conexao.php';
         $db = new Conexao();
     ?>
+    

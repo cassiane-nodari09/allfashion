@@ -44,15 +44,15 @@ if (!isset($_SESSION['usuario'])) {
 					<h2>Dados de Pagamento</h2>
 					<div class="form-group col-lg-12">
 						<label for="nome">Número do Cartão</label>
-						<input type="text" class="form-control" name="cartao">
+						<input type="text" class="form-control" name="cartao" required>
 					</div>
 					<div class="form-group col-lg-12">
 						<label for="nome">Nome do titular (como está gravado no Cartão)</label>
-						<input type="text" class="form-control" name="nome_cartao">
+						<input type="text" class="form-control" name="nome_cartao" required>
 					</div>
 					<div class="form-group col-lg-12">
 						<label style="width: 100%">Mês de Validade</label>
-						<select class="form-control" name="mes_validade" style="width: 45%; float: left;">
+						<select class="form-control" name="mes_validade" style="width: 45%; float: left;" required>
 							<option value="">MÊS</option>
 							<option value="01">01</option>
 							<option value="02">02</option>
@@ -67,20 +67,20 @@ if (!isset($_SESSION['usuario'])) {
 							<option value="11">11</option>
 							<option value="12">12</option>
 						</select>
-						<select class="form-control" name="ano_validade" style="width: 45%; float: left; margin-left: 10%;">
+						<select class="form-control" name="ano_validade" style="width: 45%; float: left; margin-left: 10%;" required>
 							<option value="">ANO</option>
 							<option value="2018">2018</option>
 							<option value="2019">2019</option>
 						</select>
 					</div>
-					<div class="form-group col-lg-4" style="margin-top: 15px;">
+					<div class="form-group col-lg-4" style="margin-top: 15px;" required>
 						<label for="nome">Código de Segurança</label>
 						<input type="text" class="form-control" name="codigo_seguranca">
 					</div>
 					<div class="clear"></div>
 					<div class="form-group col-lg-3">
 						<label for="nome">Opções de Parcelamento</label>
-						<select class="form-control" name="parcelas">
+						<select class="form-control" name="parcelas" required>
 							<option value="1">1x</option>
 							<option value="2">2x</option>
 							<option value="3">3x</option>

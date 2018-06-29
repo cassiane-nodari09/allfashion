@@ -10,7 +10,7 @@
 
     <?php
       $categoria = $_GET["cat_id"];
-      $subcategoria = $_GET["sub_cat_id"];
+    //   $subcategoria = $_GET["sub_cat_id"];
       // echo ($categoria);
       // echo ($subcategoria);
       $filtro="";
