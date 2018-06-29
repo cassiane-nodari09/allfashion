@@ -47,7 +47,7 @@
                          </table>
                     </td>
                     <td style="vertical-align: middle;"><?php echo $row['data_ini'];?></td>
-                    
+
                     <td style="vertical-align: middle;"><?php echo ($row['Status_id'] == 1) ? "Aguardando Pagamento":"Sem estatos definido";?></td>
                     <td style="vertical-align: middle;">R$ <?php echo number_format($row['valorTotal'],2,",", ".");?></td>
                     <td  style="align: 40px"><a href="addSacola.php?acao=remove&id=<?php echo $value['id'];?>"><span class="glyphicon glyphicon-trash" ></span></a></td>

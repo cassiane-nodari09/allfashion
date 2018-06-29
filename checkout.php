@@ -5,6 +5,7 @@ if (!isset($_SESSION['usuario'])) {
 	// exit;
 	echo '<script>window.location.href="formLogin.php?checkout=S"</script>';
 }
+print_r($_SESSION);
 ?>
 
 
