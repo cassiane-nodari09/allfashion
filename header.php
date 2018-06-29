@@ -40,9 +40,9 @@
             <?php 
                 // comando like com variavel 
                 // $nome = $_POST['nome'];
-                // retorna todos os produtos que tenham o valor da variável busca em qualquer posição
+                // // retorna todos os produtos que tenham o valor da variável busca em qualquer posição
                 // $result = $db->executa("SELECT descricao FROM produtos WHERE descricao like '%".$nome."%' ");
-                //  print_r($result); exit;
+                // print_r($result); exit;
             ?>
         </form>
     </div>
