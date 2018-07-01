@@ -20,7 +20,7 @@
             <li><a href="listagem.php?cat_id=-1&sub_cat_id=-1"><span class="glyphicon glyphicon-folder-close"></span>     Produtos</a></li>
             <li><a href="sacola.php"> <span class="glyphicon glyphicon-briefcase"></span>     Sacola</a></li>
         </ul>
-        
+
         <?php if (isset($_SESSION['usuario'])) { ?>
 
             <ul class="nav navbar-nav">
@@ -35,10 +35,10 @@
                 <li><a href="formLogin.php"><span class="glyphicon glyphicon-user"></span> Login</a></li>
             </ul>
         <?php } ?>
-         <form>
-            <input type="search" id="txt_consulta" class="form-control input-busca" placeholder="Busque pelo site">
-            <?php 
-                // comando like com variavel 
+         <form action="listagem.php" method="get">
+            <input type="search" name="busca" value="<?php echo (isset($_GET['busca'])) ? $_GET['busca']:''; ?>" class="form-control input-busca" placeholder="Busque pelo site">
+            <?php
+                // comando like com variavel
                 // $nome = $_POST['nome'];
                 // // retorna todos os produtos que tenham o valor da variável busca em qualquer posição
                 // $result = $db->executa("SELECT descricao FROM produtos WHERE descricao like '%".$nome."%' ");

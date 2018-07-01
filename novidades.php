@@ -9,7 +9,7 @@
                             $img_principal = $db->executa("SELECT * FROM imagens WHERE principal = 'S' AND Produtos_id = ".$row['id']);
                             $img_principal = $img_principal->fetch_array();
                         ?>
-                        <img src="<?php echo $img_principal['caminho'].$img_principal['nome'];?>" alt="VINIL, COURO E +">
+                        <img src="<?php echo $img_principal['caminho'].$img_principal['nome'];?>" alt="<?php echo utf8_encode($row['nome']);?>" style="height: 100%;">
                     </div>
                     <div class="app__home__cards__details">
                         <h3><?php echo utf8_encode($row['nome']);?></h3>

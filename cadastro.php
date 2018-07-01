@@ -25,8 +25,12 @@
     // echo $sql;exit;
     $db->executa($sql);
 
+    $usuario = $db->executa("SELECT id FROM usuarios ORDER BY id DESC LIMIT 1");
+    $usuario = $usuario->fetch_array();
+// print_r($usuario);exit;
     session_start();
 
+    $_SESSION['usuario']['id'] = $usuario['id'];
     $_SESSION['usuario']['nome'] = $nome;
     $_SESSION['usuario']['email'] = $email;
     $_SESSION['usuario']['cpf'] = $cpf;

@@ -10,6 +10,7 @@
 
     <?php
       $categoria = $_GET["cat_id"];
+      $busca = $_GET["busca"];
     //   $subcategoria = $_GET["sub_cat_id"];
       // echo ($categoria);
       // echo ($subcategoria);
@@ -17,15 +18,18 @@
       if(isset($categoria) && $categoria != -1){
         $filtro .= " AND CATEGORIAS_ID =".$categoria;
       }
-      if(isset($subcategoria) && $subcategoria != -1){
-        $filtro .= " AND SUBCATEGORIAS_ID =".$subcategoria;
+      if(isset($busca) && $busca > ""){
+        $filtro .= " AND p.nome LIKE '%".utf8_decode($busca)."%' OR p.descricao LIKE '%".utf8_decode($busca)."%'";
       }
+      // if(isset($subcategoria) && $subcategoria != -1){
+      //   $filtro .= " AND SUBCATEGORIAS_ID =".$subcategoria;
+      // }
       // $sql = "SELECT * FROM produtos where CATEGORIAS_ID =".$categoria.$filtro;
       $sql = "SELECT p.*
               FROM produtos p
               WHERE 1=1 ".$filtro;
 
-      // echo ($sql);
+      // echo ($sql);exit;
       $result = $db->executa($sql);
 
       /*
@@ -64,7 +68,7 @@
                               $img_principal = $db->executa("SELECT * FROM imagens WHERE principal = 'S' AND Produtos_id = ".$row['id']);
                               $img_principal = $img_principal->fetch_array();
                           ?>
-                          <img src="<?php echo $img_principal['caminho'].$img_principal['nome'];?>" alt="VINIL, COURO E +">
+                          <img src="<?php echo $img_principal['caminho'].$img_principal['nome'];?>" alt="<?php echo utf8_encode($row['nome']);?>" style="height: 100%;">
                       </div>
                       <div class="app__home__cards__details">
                           <h3><?php echo utf8_encode($row['nome']);?></h3>

@@ -5,7 +5,7 @@ $db = new Conexao();
 
 
 $dados = $_POST;
-// print_r($dados);exit;
+// print_r($_SESSION['usuario']);exit;
 
 $valor_total = 0;
 foreach($_SESSION['itens'] as $IdProduto => $value){

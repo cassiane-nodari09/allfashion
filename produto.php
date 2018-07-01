@@ -65,6 +65,7 @@
 
 						<fieldset class="col-lg-12">
 							<legend>Escolha o tamanho:</legend>
+							<?php if ($produto['tipo_tamanho'] == 2) { ?>
 								<label class="radio-inline">
 									<input type="radio" hidden name="tamanho" value="32">32
 								</label>
@@ -87,6 +88,7 @@
 									<input type="radio" hidden name="tamanho" value="46">46
 								</label>
 								<br/>
+							<?php } else {?>
 								<label class="radio-inline">
 									<input type="radio" hidden name="tamanho" value="P">P
 								</label>
@@ -96,7 +98,7 @@
 								<label class="radio-inline">
 									<input type="radio" hidden name="tamanho" value="G">G
 								</label>
-
+							<?php } ?>
 						</fieldset>
 
 						<input type="button" onclick="validaForm()" class="btn btn-success btn-lg" class="comprar" value="Adicionar à sacola" style="margin-bottom: 10px; float: right;">

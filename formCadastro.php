@@ -13,7 +13,7 @@
                             <input type="text" class="form-control" name="nome" placeholder="Nome" autofocus required><br>
 
                             <label for="cpf">CPF</label>
-                            <input type="text" class="form-control" name="cpf" placeholder="000.000.000-00" required><br>
+                            <input type="text" class="form-control mask_cpf" name="cpf" placeholder="000.000.000-00" required><br>
 
                             <label for="email">Email</label>
                             <input type="email" class="form-control" name="email" placeholder="email@exemplo.com" value="<?php echo (isset($_POST['email']) ? $_POST['email']:''); ?>" required><br>

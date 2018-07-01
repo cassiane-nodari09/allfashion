@@ -11,6 +11,7 @@
         </footer>
         <!-- <script src="https:ajaxgoogleapis.com/aja/libs/jquery/2.1.4/jquery.min.js"></script> -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="js/jquery-mask/jquery.mask.min.js"></script>
         <!-- <script type="text/javascript" src="slider.js"></script>  -->
         <script src="js/slider.js"></script>
         <script src="js/produto.js"></script>

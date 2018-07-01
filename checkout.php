@@ -5,7 +5,7 @@ if (!isset($_SESSION['usuario'])) {
 	// exit;
 	echo '<script>window.location.href="formLogin.php?checkout=S"</script>';
 }
-print_r($_SESSION);
+// print_r($_SESSION);
 ?>
 
 
@@ -40,12 +40,47 @@ print_r($_SESSION);
 						<input type="text" class="form-control" id="cpf" name="cpf" value="<?php // echo $_SESSION['usuario']['cpf']; ?>"  placeholder="000.000.000-00" required>
 					</div>
 				</fieldset> -->
-
+				<fieldset class="col-md-5 bd-example">
+					<h2>Endereço de Entrega</h2>
+					<div class="form-group col-lg-4">
+						<label for="nome">CEP</label>
+						<input type="text" class="form-control mask_cep" name="cep" required>
+					</div>
+					<div class="clear"></div>
+					<div class="form-group col-lg-4">
+						<label for="nome">Estado</label>
+						<select class="form-control" name="estado" required>
+							<option value="RS">RS</option>
+						</select>
+					</div>
+					<div class="form-group col-lg-8">
+						<label for="nome">Cidade</label>
+						<select class="form-control" name="cidade" required>
+							<option value="1">Erechim</option>
+						</select>
+					</div>
+					<div class="form-group col-lg-8">
+						<label for="nome">Endereço</label>
+						<input type="text" class="form-control" name="endereco" required>
+					</div>
+					<div class="form-group col-lg-4">
+						<label for="nome">Número</label>
+						<input type="number" class="form-control" name="numero" required>
+					</div>
+					<div class="form-group col-lg-6">
+						<label for="nome">Bairro</label>
+						<input type="text" class="form-control" name="bairro" required>
+					</div>
+					<div class="form-group col-lg-6">
+						<label for="nome">Complemento</label>
+						<input type="text" class="form-control" name="complemento" required>
+					</div>
+				</fieldset>
 				<fieldset class="col-md-6 bd-example"  style="float: right">
 					<h2>Dados de Pagamento</h2>
 					<div class="form-group col-lg-12">
 						<label for="nome">Número do Cartão</label>
-						<input type="text" class="form-control" name="cartao" required>
+						<input type="text" class="form-control mask_numbercard" name="cartao" required>
 					</div>
 					<div class="form-group col-lg-12">
 						<label for="nome">Nome do titular (como está gravado no Cartão)</label>
@@ -76,7 +111,7 @@ print_r($_SESSION);
 					</div>
 					<div class="form-group col-lg-4" style="margin-top: 15px;" required>
 						<label for="nome">Código de Segurança</label>
-						<input type="text" class="form-control" name="codigo_seguranca">
+						<input type="text" class="form-control" maxlength="3" name="codigo_seguranca">
 					</div>
 					<div class="clear"></div>
 					<div class="form-group col-lg-3">
@@ -92,42 +127,6 @@ print_r($_SESSION);
 					</div>
 				</fieldset>
 
-				<fieldset class="col-md-5 bd-example">
-					<h2>Endereço de Entrega</h2>
-					<div class="form-group col-lg-4">
-						<label for="nome">CEP</label>
-						<input type="text" class="form-control" name="cep" required>
-					</div>
-					<div class="clear"></div>
-					<div class="form-group col-lg-4">
-						<label for="nome">Estado</label>
-						<select class="form-control" name="estado" required>
-							<option value="RS">RS</option>
-						</select>
-					</div>
-					<div class="form-group col-lg-8">
-						<label for="nome">Cidade</label>
-						<select class="form-control" name="cidade" required>
-							<option value="1">Erechim</option>
-						</select>
-					</div>
-					<div class="form-group col-lg-8">
-						<label for="nome">Endereço</label>
-						<input type="text" class="form-control" name="endereco" required>
-					</div>
-					<div class="form-group col-lg-4">
-						<label for="nome">Número</label>
-						<input type="text" class="form-control" name="numero" required>
-					</div>
-					<div class="form-group col-lg-6">
-						<label for="nome">Bairro</label>
-						<input type="text" class="form-control" name="bairro" required>
-					</div>
-					<div class="form-group col-lg-6">
-						<label for="nome">Complemento</label>
-						<input type="text" class="form-control" name="complemento" required>
-					</div>
-				</fieldset>
 				<div class="clear"></div>
 				<button type="submit" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 50px;">
 					<span class="glyphicon glyphicon-thumbs-up"></span>

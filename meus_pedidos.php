@@ -13,7 +13,7 @@
                 <th scope="col">Data da Compra</th>
                 <th scope="col">Status</th>
                 <th scope="col">Valor Total</th>
-                <th scope="col">Ação</th>
+                <!-- <th scope="col">Ação</th> -->
             </tr>
         </thead>
         <tbody>
@@ -50,7 +50,7 @@
 
                     <td style="vertical-align: middle;"><?php echo ($row['Status_id'] == 1) ? "Aguardando Pagamento":"Sem estatos definido";?></td>
                     <td style="vertical-align: middle;">R$ <?php echo number_format($row['valorTotal'],2,",", ".");?></td>
-                    <td  style="align: 40px"><a href="addSacola.php?acao=remove&id=<?php echo $value['id'];?>"><span class="glyphicon glyphicon-trash" ></span></a></td>
+                    <!-- <td  style="align: 40px"><a href="addSacola.php?acao=remove&id=<?php //echo $value['id'];?>"><span class="glyphicon glyphicon-trash" ></span></a></td> -->
                 </tr>
             <?php } ?>
         </tbody>

@@ -1,4 +1,9 @@
 $(document).ready(function($) {
+
+    $('.mask_cpf').mask('000.000.000-00');
+    $('.mask_cep').mask('00000-000');
+    $('.mask_numbercard').mask('0000.0000.0000.0000');
+
     $(document).on('click', '.radio-inline', function () {
         $(".radio-inline").removeClass('selected');
         // $("radio[name=tamanho]").prop("checked", false);
