@@ -47,6 +47,8 @@ for ($i=1; $i <= $dados['parcelas']; $i++) {
                          VALUE ('".number_format($valor_total/$dados['parcelas'], 2, '.', '')."', ".$i.", 1, ".$pedido_id.")");
 }
 
+unset($_SESSION['itens']);
+
 // IMPRIME RECIBO
 // REDIRECIONA PARA TELA DE MEUS PEDIDOS
 echo "<script>alert('Pedido Computado com sucesso!'); window.location.href = 'meus_pedidos.php';</script>";

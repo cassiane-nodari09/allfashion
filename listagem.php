@@ -9,8 +9,9 @@
     <!-- <section class="painel novidades painel-compacto" style="width: 78%; float: right;"> -->
 
     <?php
-      $categoria = $_GET["cat_id"];
-      $busca = $_GET["busca"];
+      $dados = $_GET;
+      $categoria = (isset($dados["cat_id"])) ? $dados["cat_id"]:NULL;
+      $busca = (isset($dados["busca"])) ? $dados["busca"]:NULL;
     //   $subcategoria = $_GET["sub_cat_id"];
       // echo ($categoria);
       // echo ($subcategoria);

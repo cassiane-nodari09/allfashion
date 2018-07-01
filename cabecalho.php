@@ -14,5 +14,7 @@
     <?php
         include_once 'config/conexao.php';
         $db = new Conexao();
+        error_reporting(0);
+        ini_set("display_errors", 0 );
     ?>
     

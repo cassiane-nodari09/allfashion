@@ -1,5 +1,6 @@
 <?php include("cabecalho.php");?>
 <?php include("header.php");?>
+<?php include("banner_menor.php");?>
 <?php // session_start();?>
 
 <div class="container">

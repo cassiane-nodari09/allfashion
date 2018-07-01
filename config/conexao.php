@@ -5,7 +5,7 @@ class Conexao {
     private $con = null;
     private $host = "localhost";
     private $user = "root";
-    private $pass = "root";        
+    private $pass = "";        
     private $database = "allfashion";
 
     public function __construct() {
